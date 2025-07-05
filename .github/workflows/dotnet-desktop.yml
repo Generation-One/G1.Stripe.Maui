@@ -1,0 +1,32 @@
+name: Publish Nuget package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-packages:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: install dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9'
+        dotnet-quality: 'ga'
+
+    - name: build packages
+      shell: pwsh
+      env:
+        NugetVersion: ${{ github.event.release.tag_name }}
+      run: ./build-packages.ps1
+
+    - name: publish packages
+      shell: pwsh
+      env:
+        NugetApiKey: ${{ secrets.G1_NUGET_API_KEY }}
+      run: ./publish-nuget.ps1
