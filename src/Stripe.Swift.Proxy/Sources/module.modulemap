@@ -1,0 +1,13 @@
+//
+//  module.modulemap
+//  Stripe.Swift.Proxy
+//
+//  Created by Дмитрий Казначеев on 30.06.2025.
+//
+
+
+module main_module {
+    header "Stripe_Swift_Proxy-Swift.h"
+
+    export *
+}

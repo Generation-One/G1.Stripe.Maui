@@ -1,0 +1,265 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target x86_64-apple-ios18.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Stripe_Swift_Proxy
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Foundation
+import PassKit
+import StripeCore
+import StripePaymentSheet
+import StripePayments
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc public enum TSPSPaymentSheetResult : Swift.Int {
+  case completed = 0
+  case canceled
+  case failed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum TSPSUserInterfaceStyle : Swift.Int {
+  case automatic = 0
+  case alwaysLight
+  case alwaysDark
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(TSPSPaymentSheet) public class TSPSPaymentSheet : ObjectiveC.NSObject {
+  @objc convenience public init(paymentIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration)
+  @objc convenience public init(setupIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration)
+  @objc public static func resetCustomer()
+  @objc public func present(from presentingViewController: UIKit.UIViewController, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetResult, (any Swift.Error)?) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSConfiguration) public class TSPSConfiguration : ObjectiveC.NSObject {
+  @objc public var merchantDisplayName: Swift.String?
+  @objc public var customer: Stripe_Swift_Proxy.TSPSCustomerConfiguration?
+  @objc public var primaryButtonColor: UIKit.UIColor?
+  @objc public var appearance: Stripe_Swift_Proxy.TSPSAppearance
+  @objc public var returnURL: Swift.String?
+  @objc public var allowsDelayedPaymentMethods: Swift.Bool
+  @objc public var userInterfaceStyle: Stripe_Swift_Proxy.TSPSUserInterfaceStyle
+  @objc public var paymentMethodOrder: [Swift.String]?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(TSPSCustomerConfiguration) public class TSPSCustomerConfiguration : ObjectiveC.NSObject {
+  @objc final public let id: Swift.String
+  @objc final public let ephemeralKeySecret: Swift.String
+  @objc public init(id: Swift.String, ephemeralKeySecret: Swift.String)
+  @objc deinit
+}
+@objc(TSPSApplePayConfiguration) public class TSPSApplePayConfiguration : ObjectiveC.NSObject {
+  @objc final public let merchantId: Swift.String
+  @objc final public let merchantCountryCode: Swift.String
+  @objc final public let buttonType: PassKit.PKPaymentButtonType
+  @objc final public let paymentSummaryItems: [PassKit.PKPaymentSummaryItem]?
+  @objc final public let customHandlers: Stripe_Swift_Proxy.TSPSApplePayConfigurationHandlers?
+  @objc public init(merchantId: Swift.String, merchantCountryCode: Swift.String, buttonType: PassKit.PKPaymentButtonType = .plain, paymentSummaryItems: [PassKit.PKPaymentSummaryItem]? = nil, customHandlers: Stripe_Swift_Proxy.TSPSApplePayConfigurationHandlers? = nil)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSApplePayConfigurationHandlers) public class TSPSApplePayConfigurationHandlers : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPAddressDetails) public class TSPAddressDetails : ObjectiveC.NSObject {
+  @objc public var line1: Swift.String?
+  @objc public var line2: Swift.String?
+  @objc public var city: Swift.String?
+  @objc public var state: Swift.String?
+  @objc public var postalCode: Swift.String?
+  @objc public var country: Swift.String?
+  @objc override dynamic public init()
+  @objc public init(line1: Swift.String? = nil, line2: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, postalCode: Swift.String? = nil, country: Swift.String? = nil)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPBillingDetails) public class TSPBillingDetails : ObjectiveC.NSObject {
+  @objc public var address: Stripe_Swift_Proxy.TSPAddressDetails?
+  @objc public var email: Swift.String?
+  @objc public var name: Swift.String?
+  @objc public var phone: Swift.String?
+  @objc override dynamic public init()
+  @objc public init(address: Stripe_Swift_Proxy.TSPAddressDetails? = nil, email: Swift.String? = nil, name: Swift.String? = nil, phone: Swift.String? = nil)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSAppearance) public class TSPSAppearance : ObjectiveC.NSObject {
+  @objc public static let `default`: Stripe_Swift_Proxy.TSPSAppearance
+  @objc public var font: Stripe_Swift_Proxy.TSPSAppearanceFont {
+    @objc get
+  }
+  @objc public var colors: Stripe_Swift_Proxy.TSPSAppearanceColors {
+    @objc get
+  }
+  @objc public var primaryButton: Stripe_Swift_Proxy.TSPSAppearancePrimaryButton {
+    @objc get
+  }
+  @objc public var cornerRadius: CoreFoundation.CGFloat
+  @objc public var borderWidth: CoreFoundation.CGFloat
+  @objc public var shadow: Stripe_Swift_Proxy.TSPSAppearanceShadow {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSAppearanceFont) public class TSPSAppearanceFont : ObjectiveC.NSObject {
+  @objc public var base: UIKit.UIFont?
+  @objc public var sizeScaleFactor: CoreFoundation.CGFloat
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSAppearanceColors) public class TSPSAppearanceColors : ObjectiveC.NSObject {
+  @objc public var primary: UIKit.UIColor?
+  @objc public var background: UIKit.UIColor?
+  @objc public var componentBackground: UIKit.UIColor?
+  @objc public var componentBorder: UIKit.UIColor?
+  @objc public var componentDivider: UIKit.UIColor?
+  @objc public var text: UIKit.UIColor?
+  @objc public var textSecondary: UIKit.UIColor?
+  @objc public var componentText: UIKit.UIColor?
+  @objc public var componentPlaceholderText: UIKit.UIColor?
+  @objc public var icon: UIKit.UIColor?
+  @objc public var danger: UIKit.UIColor?
+  @objc public var warning: UIKit.UIColor?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSAppearancePrimaryButton) public class TSPSAppearancePrimaryButton : ObjectiveC.NSObject {
+  @objc public var backgroundColor: UIKit.UIColor?
+  @objc public var textColor: UIKit.UIColor?
+  @objc public var cornerRadius: CoreFoundation.CGFloat
+  @objc public var borderColor: UIKit.UIColor?
+  @objc public var borderWidth: CoreFoundation.CGFloat
+  @objc public var font: UIKit.UIFont?
+  @objc public var shadow: Stripe_Swift_Proxy.TSPSAppearanceShadow {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSAppearanceShadow) public class TSPSAppearanceShadow : ObjectiveC.NSObject {
+  @objc public var color: UIKit.UIColor?
+  @objc public var opacity: CoreFoundation.CGFloat
+  @objc public var offset: CoreFoundation.CGSize
+  @objc public var radius: CoreFoundation.CGFloat
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum TSPSPaymentMethodType : Swift.Int {
+  case card = 0
+  case cardPresent
+  case iDEAL
+  case SEPA
+  case AUBECSDebit
+  case bacsDebit
+  case sofort
+  case UPI
+  case netBanking
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum TSPSCardBrand : Swift.Int {
+  case visa = 0
+  case amex
+  case masterCard
+  case discover
+  case JCB
+  case dinersClub
+  case unionPay
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension Foundation.NSNumber {
+  @objc dynamic public var cardBrand: StripePayments.STPCardBrand {
+    @objc get
+  }
+}
+@_hasMissingDesignatedInitializers @objc(TSPSPaymentMethod) public class TSPSPaymentMethod : ObjectiveC.NSObject {
+  @objc final public let stripeId: Swift.String
+  @objc final public let type: Stripe_Swift_Proxy.TSPSPaymentMethodType
+  @objc final public let billingDetails: Stripe_Swift_Proxy.TSPBillingDetails?
+  @objc final public let card: Stripe_Swift_Proxy.TSPSPaymentMethodCard?
+  @objc final public let created: Foundation.Date?
+  @objc final public let customerId: Swift.String?
+  @objc final public let liveMode: Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(TSPSPaymentMethodCard) public class TSPSPaymentMethodCard : ObjectiveC.NSObject {
+  @objc final public let brand: Stripe_Swift_Proxy.TSPSCardBrand
+  @objc final public let last4: Swift.String?
+  @objc final public let expiryMonth: Foundation.NSNumber?
+  @objc final public let expiryYear: Foundation.NSNumber?
+  @objc final public let funding: Swift.String?
+  @objc final public let country: Swift.String?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(TSPSPaymentIntent) public class TSPSPaymentIntent : ObjectiveC.NSObject {
+  @objc final public let stripeId: Swift.String
+  @objc final public let clientSecret: Swift.String
+  @objc final public let amount: Foundation.NSNumber
+  @objc final public let currency: Swift.String
+  @objc final public let status: Swift.String
+  @objc final public let paymentMethod: Stripe_Swift_Proxy.TSPSPaymentMethod?
+  @objc final public let created: Foundation.Date
+  @objc final public let liveMode: Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(TSPSSetupIntent) public class TSPSSetupIntent : ObjectiveC.NSObject {
+  @objc final public let stripeId: Swift.String
+  @objc final public let clientSecret: Swift.String
+  @objc final public let status: Swift.String
+  @objc final public let paymentMethod: Stripe_Swift_Proxy.TSPSPaymentMethod?
+  @objc final public let created: Foundation.Date
+  @objc final public let liveMode: Swift.Bool
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSPaymentSheetFlowController) public class TSPSPaymentSheetFlowController : ObjectiveC.NSObject {
+  @objc public static func create(paymentIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetFlowController?, (any Swift.Error)?) -> Swift.Void)
+  @objc public static func create(setupIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetFlowController?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func presentPaymentOptions(from presentingViewController: UIKit.UIViewController, completion: @escaping () -> Swift.Void)
+  @objc public func confirm(from presentingViewController: UIKit.UIViewController, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetResult, (any Swift.Error)?) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(TSPSPaymentOption) public class TSPSPaymentOption : ObjectiveC.NSObject {
+  @objc final public let label: Swift.String
+  @objc final public let image: UIKit.UIImage
+  @objc public init(label: Swift.String, image: UIKit.UIImage)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(TSPSPaymentButton) @_Concurrency.MainActor @preconcurrency public class TSPSPaymentButton : UIKit.UIButton {
+  @objc @_Concurrency.MainActor @preconcurrency public var onPaymentOptionChanged: ((Stripe_Swift_Proxy.TSPSPaymentOption?) -> Swift.Void)?
+  @objc @_Concurrency.MainActor @preconcurrency public var onPaymentCompletion: ((Stripe_Swift_Proxy.TSPSPaymentSheetResult, (any Swift.Error)?) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor @preconcurrency public func configure(with flowController: Stripe_Swift_Proxy.TSPSPaymentSheetFlowController)
+  @objc deinit
+}
+extension Stripe_Swift_Proxy.TSPSPaymentSheetResult : Swift.Equatable {}
+extension Stripe_Swift_Proxy.TSPSPaymentSheetResult : Swift.Hashable {}
+extension Stripe_Swift_Proxy.TSPSPaymentSheetResult : Swift.RawRepresentable {}
+extension Stripe_Swift_Proxy.TSPSUserInterfaceStyle : Swift.Equatable {}
+extension Stripe_Swift_Proxy.TSPSUserInterfaceStyle : Swift.Hashable {}
+extension Stripe_Swift_Proxy.TSPSUserInterfaceStyle : Swift.RawRepresentable {}
+extension Stripe_Swift_Proxy.TSPSPaymentMethodType : Swift.Equatable {}
+extension Stripe_Swift_Proxy.TSPSPaymentMethodType : Swift.Hashable {}
+extension Stripe_Swift_Proxy.TSPSPaymentMethodType : Swift.RawRepresentable {}
+extension Stripe_Swift_Proxy.TSPSCardBrand : Swift.Equatable {}
+extension Stripe_Swift_Proxy.TSPSCardBrand : Swift.Hashable {}
+extension Stripe_Swift_Proxy.TSPSCardBrand : Swift.RawRepresentable {}

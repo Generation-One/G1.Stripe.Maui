@@ -1,0 +1,51 @@
+﻿<metadata>
+
+	<remove-node path="/api/package[@name='com.stripe.stripeterminal.dagger']"/>
+
+	<remove-node path="/api/package[starts-with(@name, 'com.google')]" />
+	<remove-node path="/api/package[starts-with(@name, 'kotlin')]" />
+	<remove-node path="/api/package[starts-with(@name, 'org.jetbrains')]" />
+	<remove-node path="/api/package[starts-with(@name, 'dagger')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.e.c')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.s.')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.cots')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.uicore')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.core.networking')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.core')]" />
+
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.hcaptcha')]" />
+
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.databinding')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.googlepaylauncher')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.link')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.stripe3ds2')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.stripe.android.view')]" />
+	<remove-node path="/api/package[@name='com.stripe.android.paymentsheet']/class[@name='PaymentSheetContract']" />
+	<remove-node path="/api/package[@name='com.stripe.android.payments.bankaccount.navigation']" />
+	<remove-node path="/api/package[@name='com.stripe.android.payments.paymentlauncher']" />
+	<remove-node path="/api/package[@name='com.stripe.android.model.parsers']" />
+
+	<remove-node path="/api/package[@name='com.stripe.android.paymentelement.embedded.manage']/class[@name='ManageActivity_MembersInjector']" />
+	<remove-node path="/api/package[@name='com.stripe.android.paymentelement.embedded.form']/class[@name='FormActivity_MembersInjector']" />
+	<remove-node path="/api/package[@name='com.stripe.android.payments.bankaccount.ui']/class[@name='CollectBankAccountActivity']" />
+
+	<remove-node path="/api/package[@name='com.stripe.android']/class[@name='SetupIntentResult']" />
+	<remove-node path="/api/package[@name='com.stripe.android']/class[@name='PaymentIntentResult']" />
+
+
+	<remove-node path="/api/package[@name='com.stripe.android.model']/class[@name='ConfirmSetupIntentParams']" />
+	<remove-node path="/api/package[@name='com.stripe.android']/interface[@name='StripeIntentResult.Outcome']" />
+
+	<attr path="/api/package[@name='com.stripe.android.paymentsheet.databinding']/class[@name='StripeFragmentPrimaryButtonContainerBinding']/method[@name='getRoot' and count(parameter)=0]" name="managedReturn">Android.Views.View</attr>
+	<attr path="/api/package[@name='com.stripe.android.model']/class[@name='ConfirmPaymentIntentParams']/method[@name='withShouldUseStripeSdk' and count(parameter)=1 and parameter[1][@type='boolean']]" name="managedReturn">Com.Stripe.Android.Model.IConfirmStripeIntentParams</attr>
+	<attr path="/api/package[@name='com.stripe.android.ui.core.databinding']/class[@name='StripeActivityCardScanBinding']/method[@name='getRoot' and count(parameter)=0]" name="managedReturn">Android.Views.View</attr>
+
+	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='get']" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='methodFromString']" name="managedReturn">Com.Stripe.Core.Aidlrpc.IAidlMethods</attr>
+	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='serviceFromString']" name="managedReturn">Com.Stripe.Core.Aidlrpc.IAidlServices</attr>
+	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='createFromParcel' and count(parameter)=1 and parameter[1][@type='android.os.Parcel']]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='newArray' and count(parameter)=1 and parameter[1][@type='int']]" name="managedReturn">Java.Lang.Object[]</attr>
+
+	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='fromJson']" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='newBuilder']" name="managedReturn">Java.Lang.Object</attr>
+</metadata>

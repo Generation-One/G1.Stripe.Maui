@@ -1,0 +1,860 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios13.1-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StripePaymentsUI
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AppKit
+import DeveloperToolsSupport
+import Foundation
+@_exported @_spi(STP) import StripeCore
+@_exported @_spi(STP) import StripePayments
+@_exported import StripePaymentsUI
+@_spi(STP) import StripeUICore
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension StripePaymentsUI.STPCardFormViewStyle : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class STPImageLibrary : ObjectiveC.NSObject {
+  @objc public class func applePayCardImage() -> UIKit.UIImage
+  @objc public class func amexCardImage() -> UIKit.UIImage
+  @objc public class func dinersClubCardImage() -> UIKit.UIImage
+  @objc public class func discoverCardImage() -> UIKit.UIImage
+  @objc public class func jcbCardImage() -> UIKit.UIImage
+  @objc public class func mastercardCardImage() -> UIKit.UIImage
+  @objc public class func unionPayCardImage() -> UIKit.UIImage
+  @objc public class func visaCardImage() -> UIKit.UIImage
+  @objc public class func unknownCardCardImage() -> UIKit.UIImage
+  @objc(brandImageForCardBrand:) public class func cardBrandImage(for brand: StripePayments.STPCardBrand) -> UIKit.UIImage
+  @_spi(STP) public class func unpaddedCardBrandImage(for brand: StripePayments.STPCardBrand) -> UIKit.UIImage
+  @objc(cardBrandChoiceImage) public class func cardBrandChoiceImage() -> UIKit.UIImage
+  @objc(templatedBrandImageForCardBrand:) public class func templatedBrandImage(for brand: StripePayments.STPCardBrand) -> UIKit.UIImage
+  @objc(cvcImageForCardBrand:) public class func cvcImage(for brand: StripePayments.STPCardBrand) -> UIKit.UIImage
+  @objc(errorImageForCardBrand:) public class func errorImage(for brand: StripePayments.STPCardBrand) -> UIKit.UIImage
+  @_spi(STP) public class func bankIcon() -> UIKit.UIImage
+  @_spi(STP) public class func linkBankIcon() -> UIKit.UIImage
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_spi(STP) extension StripePaymentsUI.STPImageLibrary : StripeUICore.ImageMaker {
+  @_spi(STP) public typealias BundleLocator = StripePaymentsUI.StripePaymentsUIBundleLocator
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers public class STPPhoneNumberValidator : ObjectiveC.NSObject {
+  @_spi(STP) @objc override dynamic public init()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc public enum STPPostalCodeRequirement : Swift.Int {
+  @_spi(STP) case standard
+  @_spi(STP) case upe
+  @_spi(STP) public init?(rawValue: Swift.Int)
+  @_spi(STP) public typealias RawValue = Swift.Int
+  @_spi(STP) public var rawValue: Swift.Int {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers public class STPPostalCodeValidator : ObjectiveC.NSObject {
+  @_spi(STP) public class func postalCodeIsRequired(forCountryCode countryCode: Swift.String?) -> Swift.Bool
+  @_spi(STP) public class func validationState(forPostalCode postalCode: Swift.String?, countryCode: Swift.String?, with postalRequirement: StripePaymentsUI.STPPostalCodeRequirement = .standard) -> StripePayments.STPCardValidationState
+  @_spi(STP) @objc override dynamic public init()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @_inheritsConvenienceInitializers public class STPPromise<T> : ObjectiveC.NSObject {
+  @_spi(STP) public typealias STPPromiseErrorBlock = (any Swift.Error) -> Swift.Void
+  @_spi(STP) public typealias STPPromiseValueBlock = (T) -> Swift.Void
+  @_spi(STP) public typealias STPPromiseCompletionBlock = (T?, (any Swift.Error)?) -> Swift.Void
+  @_spi(STP) public typealias STPPromiseFlatMapBlock = (T) -> StripePaymentsUI.STPPromise<T>
+  @_spi(STP) public var completed: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func succeed(_ value: T)
+  @_spi(STP) public func fail(_ error: any Swift.Error)
+  @_spi(STP) public func complete(with promise: StripePaymentsUI.STPPromise<T>)
+  @_spi(STP) @discardableResult
+  public func onSuccess(_ callback: @escaping StripePaymentsUI.STPPromise<T>.STPPromiseValueBlock) -> Self
+  @_spi(STP) @discardableResult
+  public func onFailure(_ callback: @escaping StripePaymentsUI.STPPromise<T>.STPPromiseErrorBlock) -> Self
+  @_spi(STP) @objc override dynamic public init()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers public class STPStringUtils : ObjectiveC.NSObject {
+  @_spi(STP) @objc(expirationDateStringFromString:) public class func expirationDateString(from string: Swift.String?) -> Swift.String?
+  @_spi(STP) public class func stringMayContainExpirationDate(_ string: Swift.String?) -> Swift.Bool
+  @_spi(STP) public class func sanitizedExpirationDateFromOCRString(_ string: Swift.String) -> Swift.String?
+  @_spi(STP) @objc override dynamic public init()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension Swift.String.Localized {
+  @_spi(STP) public static var bank_account: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var card_number: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var card_brand_ending_in_last_4: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var bank_name_account_ending_in_last_4: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var apple_pay: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var expiration_date_accessibility_label: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var allow_camera_access: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var shipping_address: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var billing_address_lowercase: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_card_number_is_incomplete: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_card_number_is_invalid: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var cvc_section_title: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var cvc: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var card_information: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var mm_yy: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_cards_security_code_is_incomplete: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_cards_expiration_date_is_invalid: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_card_has_expired: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_cards_expiration_date_is_incomplete: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_cards_expiration_month_is_invalid: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_cards_expiration_year_is_invalid: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var brand_not_allowed: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var generic_brand_not_allowed: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public enum Funding {
+    @_spi(STP) public static var credit: Swift.String {
+      @_spi(STP) get
+    }
+    @_spi(STP) public static var debit: Swift.String {
+      @_spi(STP) get
+    }
+    @_spi(STP) public static var prepaid: Swift.String {
+      @_spi(STP) get
+    }
+    @_spi(STP) public static var `default`: Swift.String {
+      @_spi(STP) get
+    }
+  }
+}
+@_spi(STP) public struct StripeSharedStrings {
+  @_spi(STP) public static func localizedStateString(for countryCode: Swift.String?) -> Swift.String
+}
+@_spi(STP) @_hasMissingDesignatedInitializers final public class StripePaymentsUIBundleLocator : StripeCore.BundleLocatorProtocol {
+  @_spi(STP) public static let internalClass: Swift.AnyClass
+  @_spi(STP) public static let bundleName: Swift.String
+  @_spi(STP) public static let resourcesBundle: Foundation.Bundle
+  @_spi(STP) @objc deinit
+}
+extension Foundation.NSAttributedString {
+  @_spi(STP) public var extent: Foundation.NSRange {
+    get
+  }
+}
+extension UIKit.UIButton {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func setContentSpacing(_ spacing: CoreFoundation.CGFloat, withEdgeInsets edgeInsets: UIKit.NSDirectionalEdgeInsets)
+}
+@_spi(STP) extension StripeUICore.DropdownFieldElement {
+  @_spi(STP) public static func makeCardBrandDropdown(cardBrands: Swift.Set<StripePayments.STPCardBrand> = Set<STPCardBrand>(), disallowedCardBrands: Swift.Set<StripePayments.STPCardBrand> = Set<STPCardBrand>(), theme: StripeUICore.ElementsAppearance = .default, includePlaceholder: Swift.Bool = true, maxWidth: CoreFoundation.CGFloat? = nil, hasPadding: Swift.Bool = true) -> StripeUICore.DropdownFieldElement
+  @_spi(STP) public static func items(from cardBrands: Swift.Set<StripePayments.STPCardBrand>, disallowedCardBrands: Swift.Set<StripePayments.STPCardBrand>, theme: StripeUICore.ElementsAppearance, includePlaceholder: Swift.Bool = true, maxWidth: CoreFoundation.CGFloat? = nil) -> [StripeUICore.DropdownFieldElement.DropdownItem]
+}
+@_spi(STP) @_hasMissingDesignatedInitializers @objc(STP_Internal_CardBrandView) @_Concurrency.MainActor(unsafe) final public class CardBrandView : UIKit.UIView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static let targetIconSize: CoreFoundation.CGSize
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public func size(for targetSize: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(showCVC: Swift.Bool = false, centerHorizontally: Swift.Bool = false)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public func setCardBrand(_ brand: StripePayments.STPCardBrand)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.DynamicImageView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static func makeUnknownCardImageView(theme: StripeUICore.ElementsAppearance) -> StripeUICore.DynamicImageView
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPCardCVCInputTextField : StripePaymentsUI.STPInputTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var cardBrand: StripePayments.STPCardBrand {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(prefillDetails: StripePaymentsUI.STPCardFormView.PrefillDetails? = nil)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPCardNumberInputTextField : StripePaymentsUI.STPInputTextField {
+  @_spi(STP) public enum InputMode {
+    @_spi(STP) case standard
+    @_spi(STP) case panLocked
+    @_spi(STP) public static func == (a: StripePaymentsUI.STPCardNumberInputTextField.InputMode, b: StripePaymentsUI.STPCardNumberInputTextField.InputMode) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic open func menuAttachmentPoint(for configuration: UIKit.UIContextMenuConfiguration) -> CoreFoundation.CGPoint
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic open func contextMenuInteraction(_ interaction: UIKit.UIContextMenuInteraction, configurationForMenuAtLocation location: CoreFoundation.CGPoint) -> UIKit.UIContextMenuConfiguration?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(inputMode: StripePaymentsUI.STPCardNumberInputTextField.InputMode = .standard, prefillDetails: StripePaymentsUI.STPCardFormView.PrefillDetails? = nil, cbcEnabledOverride: Swift.Bool? = nil)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPPostalCodeInputTextField : StripePaymentsUI.STPInputTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var postalCode: Swift.String? {
+    @_spi(STP) get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(postalCodeRequirement: StripePaymentsUI.STPPostalCodeRequirement)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPCountryPickerInputField : StripePaymentsUI.STPGenericInputPickerField {
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripePaymentsUI.STPCountryPickerInputField {
+  @_spi(STP) @objc @_inheritsConvenienceInitializers public class CountryPickerDataSource : ObjectiveC.NSObject, StripePaymentsUI.STPGenericInputPickerFieldDataSource {
+    @_spi(STP) final public let countries: [(code: Swift.String, displayName: Swift.String)]
+    @_spi(STP) public func inputPickerField(_ pickerField: StripePaymentsUI.STPGenericInputPickerField, titleForRow row: Swift.Int) -> Swift.String?
+    @_spi(STP) public func inputPickerField(_ pickerField: StripePaymentsUI.STPGenericInputPickerField, inputValueForRow row: Swift.Int) -> Swift.String?
+    @_spi(STP) public func numberOfRows() -> Swift.Int
+    @_spi(STP) @objc override dynamic public init()
+    @_spi(STP) @objc deinit
+  }
+}
+@_spi(STP) public protocol STPGenericInputPickerFieldDataSource {
+  @_spi(STP) func numberOfRows() -> Swift.Int
+  @_spi(STP) func inputPickerField(_ pickerField: StripePaymentsUI.STPGenericInputPickerField, titleForRow row: Swift.Int) -> Swift.String?
+  @_spi(STP) func inputPickerField(_ pickerField: StripePaymentsUI.STPGenericInputPickerField, inputValueForRow row: Swift.Int) -> Swift.String?
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPGenericInputPickerField : StripePaymentsUI.STPInputTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public let pickerView: UIKit.UIPickerView
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var dataSource: any StripePaymentsUI.STPGenericInputPickerFieldDataSource {
+    @_spi(STP) get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityAttributedValue: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityAttributedLabel: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func resignFirstResponder() -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func caretRect(for position: UIKit.UITextPosition) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func updateValue()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripePaymentsUI.STPGenericInputPickerField : UIKit.UIPickerViewDelegate {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc dynamic public func pickerView(_ pickerView: UIKit.UIPickerView, attributedTitleForRow row: Swift.Int, forComponent component: Swift.Int) -> Foundation.NSAttributedString?
+}
+@_spi(STP) extension StripePaymentsUI.STPGenericInputPickerField : StripeUICore.DoneButtonToolbarDelegate {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func didTapDone(_ toolbar: StripeUICore.DoneButtonToolbar)
+}
+@_spi(STP) @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPInputTextField : StripePaymentsUI.STPFloatingPlaceholderTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var text: Swift.String? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func resignFirstResponder() -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var isUserInteractionEnabled: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityAttributedValue: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityAttributedLabel: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func deleteBackward()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var keyCommands: [UIKit.UIKeyCommand]? {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) public enum STPFormTextFieldAutoFormattingBehavior : Swift.Int {
+  @_spi(STP) case none
+  @_spi(STP) case phoneNumbers
+  @_spi(STP) case cardNumbers
+  @_spi(STP) case expiration
+  @_spi(STP) case bsbNumber
+  @_spi(STP) public init?(rawValue: Swift.Int)
+  @_spi(STP) public typealias RawValue = Swift.Int
+  @_spi(STP) public var rawValue: Swift.Int {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class STPFormTextField : StripePaymentsUI.STPValidatedTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var selectionEnabled: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set(selectionEnabled)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var preservesContentsOnPaste: Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var autoFormattingBehavior: StripePaymentsUI.STPFormTextFieldAutoFormattingBehavior {
+    @_spi(STP) get
+    @_spi(STP) set(autoFormattingBehavior)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func insertText(_ text: Swift.String)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func deleteBackward()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var text: Swift.String? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set(text)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var attributedText: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set(attributedText)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityAttributedValue: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var accessibilityAttributedLabel: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var attributedPlaceholder: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set(attributedPlaceholder)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var keyCommands: [UIKit.UIKeyCommand]? {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func closestPosition(to point: CoreFoundation.CGPoint) -> UIKit.UITextPosition?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func canPerformAction(_ action: ObjectiveC.Selector, withSender sender: Any?) -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func paste(_ sender: Any?)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override weak dynamic public var delegate: (any UIKit.UITextFieldDelegate)? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class STPValidatedTextField : UIKit.UITextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var defaultColor: UIKit.UIColor? {
+    @_spi(STP) get
+    @_spi(STP) set(defaultColor)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var errorColor: UIKit.UIColor? {
+    @_spi(STP) get
+    @_spi(STP) set(errorColor)
+  }
+  @_spi(STP) @objc @_Concurrency.MainActor(unsafe) public var placeholderColor: UIKit.UIColor? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set(placeholderColor)
+  }
+  @_spi(STP) @objc @_Concurrency.MainActor(unsafe) public var validText: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set(validText)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var placeholder: Swift.String? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set(placeholder)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(STP) @objc deinit
+}
+@objc public protocol STPAUBECSDebitFormViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func auBECSDebitForm(_ form: StripePaymentsUI.STPAUBECSDebitFormView, didChangeToStateComplete complete: Swift.Bool)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class STPAUBECSDebitFormView : StripePaymentsUI.STPMultiFormTextField, UIKit.UITextViewDelegate {
+  @objc(initWithCompanyName:) @_Concurrency.MainActor(unsafe) required public init(companyName: Swift.String)
+  @objc @_Concurrency.MainActor(unsafe) public var formBackgroundColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) weak public var becsDebitFormDelegate: (any StripePaymentsUI.STPAUBECSDebitFormViewDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) public var paymentMethodParams: StripePayments.STPPaymentMethodParams? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func systemLayoutSizeFitting(_ targetSize: CoreFoundation.CGSize, withHorizontalFittingPriority horizontalFittingPriority: UIKit.UILayoutPriority, verticalFittingPriority: UIKit.UILayoutPriority) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc override public var formFont: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override public var formTextColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+}
+extension StripePaymentsUI.STPCardFormView {
+  public struct Representable : SwiftUI.UIViewRepresentable {
+    public init(_ style: StripePaymentsUI.STPCardFormViewStyle = .standard, paymentMethodParams: SwiftUI.Binding<StripePayments.STPPaymentMethodParams>, isComplete: SwiftUI.Binding<Swift.Bool>)
+    @_Concurrency.MainActor(unsafe) public func makeCoordinator() -> StripePaymentsUI.STPCardFormView.Coordinator
+    @_Concurrency.MainActor(unsafe) public func makeUIView(context: StripePaymentsUI.STPCardFormView.Representable.Context) -> StripePaymentsUI.STPCardFormView
+    @_Concurrency.MainActor(unsafe) public func updateUIView(_ cardFormView: StripePaymentsUI.STPCardFormView, context: StripePaymentsUI.STPCardFormView.Representable.Context)
+    public typealias Body = Swift.Never
+    public typealias Coordinator = StripePaymentsUI.STPCardFormView.Coordinator
+    public typealias UIViewType = StripePaymentsUI.STPCardFormView
+  }
+  @objc @_hasMissingDesignatedInitializers public class Coordinator : ObjectiveC.NSObject, StripePaymentsUI.STPCardFormViewDelegate {
+    @objc public func cardFormView(_ form: StripePaymentsUI.STPCardFormView, didChangeToStateComplete complete: Swift.Bool)
+    @objc deinit
+  }
+}
+@objc public enum STPCardFormViewStyle : Swift.Int {
+  case standard
+  case borderless
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol STPCardFormViewDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func cardFormView(_ form: StripePaymentsUI.STPCardFormView, didChangeToStateComplete complete: Swift.Bool)
+}
+@_spi(STP) public protocol STPCardFormViewInternalDelegate {
+  @_spi(STP) func cardFormView(_ form: StripePaymentsUI.STPCardFormView, didUpdateSelectedCountry countryCode: Swift.String?)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPCardFormView : StripePaymentsUI.STPFormView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var countryField: StripePaymentsUI.STPCountryPickerInputField {
+    get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var postalCodeField: StripePaymentsUI.STPPostalCodeInputTextField {
+    get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var countryCode: Swift.String? {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any StripePaymentsUI.STPCardFormViewDelegate)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var disabledBackgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var cardParams: StripePayments.STPPaymentMethodParams? {
+    @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func _stpinternal_setCardParams(_ params: StripePayments.STPPaymentMethodParams?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isUserInteractionEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) convenience public init(style: StripePaymentsUI.STPCardFormViewStyle = .standard)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(billingAddressCollection: StripePaymentsUI.BillingAddressCollectionLevel, style: StripePaymentsUI.STPCardFormViewStyle = .standard, postalCodeRequirement: StripePaymentsUI.STPPostalCodeRequirement = .standard, prefillDetails: StripePaymentsUI.STPCardFormView.PrefillDetails? = nil, inputMode: StripePaymentsUI.STPCardNumberInputTextField.InputMode = .standard, cbcEnabledOverride: Swift.Bool? = nil)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func markFormErrors(for apiError: any Swift.Error) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var preferredNetworks: [StripePayments.STPCardBrand]? {
+    get
+    set
+  }
+  @available(swift, obsoleted: 1.0)
+  @objc(preferredNetworks) @_Concurrency.MainActor(unsafe) open func preferredNetworks_objc() -> [Foundation.NSNumber]?
+  @available(swift, obsoleted: 1.0)
+  @objc(setPreferredNetworks:) @_Concurrency.MainActor(unsafe) open func setPreferredNetworks_objc(preferredNetworks: [Foundation.NSNumber]?)
+  @_Concurrency.MainActor(unsafe) public var onBehalfOf: Swift.String? {
+    get
+    set
+  }
+  @objc deinit
+}
+@_spi(STP) extension StripePaymentsUI.STPCardFormView : StripeCore.STPAnalyticsProtocol {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static var stp_analyticsIdentifier: Swift.String
+}
+extension StripePaymentsUI.STPCardFormView {
+  @_spi(STP) public struct PrefillDetails {
+    @_spi(STP) public let last4: Swift.String
+    @_spi(STP) public let expiryMonth: Swift.Int
+    @_spi(STP) public let expiryYear: Swift.Int
+    @_spi(STP) public let cardBrand: StripePayments.STPCardBrand
+    @_spi(STP) public var formattedLast4: Swift.String {
+      @_spi(STP) get
+    }
+    @_spi(STP) public var formattedExpiry: Swift.String {
+      @_spi(STP) get
+    }
+    @_spi(STP) public init(last4: Swift.String, expiryMonth: Swift.Int, expiryYear: Swift.Int, cardBrand: StripePayments.STPCardBrand)
+  }
+}
+@_spi(STP) public enum BillingAddressCollectionLevel {
+  @_spi(STP) case automatic
+  @_spi(STP) case required
+  @_spi(STP) public static func == (a: StripePaymentsUI.BillingAddressCollectionLevel, b: StripePaymentsUI.BillingAddressCollectionLevel) -> Swift.Bool
+  @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(STP) public var hashValue: Swift.Int {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPFloatingPlaceholderTextField : UIKit.UITextField {
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripePaymentsUI.STPFloatingPlaceholderTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var placeholder: Swift.String? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var attributedPlaceholder: Foundation.NSAttributedString? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var font: UIKit.UIFont? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var textAlignment: UIKit.NSTextAlignment {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var leftViewMode: UIKit.UITextField.ViewMode {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var rightViewMode: UIKit.UITextField.ViewMode {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func resignFirstResponder() -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func textRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func placeholderRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func editingRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func leftViewRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func rightViewRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func systemLayoutSizeFitting(_ targetSize: CoreFoundation.CGSize, withHorizontalFittingPriority horizontalFittingPriority: UIKit.UILayoutPriority, verticalFittingPriority: UIKit.UILayoutPriority) -> CoreFoundation.CGSize
+}
+@objc public protocol STPFormTextFieldContainer : ObjectiveC.NSObjectProtocol {
+  @objc dynamic var formFont: UIKit.UIFont { get set }
+  @objc dynamic var formTextColor: UIKit.UIColor { get set }
+  @objc dynamic var formTextErrorColor: UIKit.UIColor { get set }
+  @objc dynamic var formPlaceholderColor: UIKit.UIColor { get set }
+  @objc dynamic var formCursorColor: UIKit.UIColor { get set }
+  @objc dynamic var formKeyboardAppearance: UIKit.UIKeyboardAppearance { get set }
+}
+@_spi(STP) public protocol STPFormViewInternalDelegate : ObjectiveC.NSObjectProtocol {
+  @_spi(STP) func formView(_ form: StripePaymentsUI.STPFormView, didChangeToStateComplete complete: Swift.Bool)
+  @_spi(STP) func formViewWillBecomeFirstResponder(_ form: StripePaymentsUI.STPFormView)
+  @_spi(STP) func formView(_ form: StripePaymentsUI.STPFormView, didTapAccessoryButton button: UIKit.UIButton)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class STPFormView : UIKit.UIView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) weak public var formViewInternalDelegate: (any StripePaymentsUI.STPFormViewInternalDelegate)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canResignFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func resignFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isUserInteractionEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func nextFirstResponderFieldBecomeFirstResponder()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class STPMultiFormTextField : UIKit.UIView, StripePaymentsUI.STPFormTextFieldContainer, UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public func focusNextForm()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canResignFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func resignFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var canBecomeFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public var formFont: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var formTextColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var formTextErrorColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var formPlaceholderColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var formCursorColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var formKeyboardAppearance: UIKit.UIKeyboardAppearance {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension StripePaymentsUI.STPPaymentCardTextField {
+  public struct Representable : SwiftUI.UIViewRepresentable {
+    public init(paymentMethodParams: SwiftUI.Binding<StripePayments.STPPaymentMethodParams?>)
+    @_Concurrency.MainActor(unsafe) public func makeCoordinator() -> StripePaymentsUI.STPPaymentCardTextField.Representable.Coordinator
+    @_Concurrency.MainActor(unsafe) public func makeUIView(context: StripePaymentsUI.STPPaymentCardTextField.Representable.Context) -> StripePaymentsUI.STPPaymentCardTextField
+    @_Concurrency.MainActor(unsafe) public func updateUIView(_ paymentCardField: StripePaymentsUI.STPPaymentCardTextField, context: StripePaymentsUI.STPPaymentCardTextField.Representable.Context)
+    @objc @_hasMissingDesignatedInitializers public class Coordinator : ObjectiveC.NSObject, StripePaymentsUI.STPPaymentCardTextFieldDelegate {
+      @objc public func paymentCardTextFieldDidChange(_ cardField: StripePaymentsUI.STPPaymentCardTextField)
+      @objc deinit
+    }
+    public typealias Body = Swift.Never
+    public typealias UIViewType = StripePaymentsUI.STPPaymentCardTextField
+  }
+}
+@_inheritsConvenienceInitializers @IBDesignable @objc(STPPaymentCardTextField) @_Concurrency.MainActor(unsafe) open class STPPaymentCardTextField : UIKit.UIControl, UIKit.UIKeyInput {
+  @_Concurrency.MainActor(unsafe) @objc open func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak open var delegate: (any StripePaymentsUI.STPPaymentCardTextFieldDelegate)?
+  @objc @_Concurrency.MainActor(unsafe) open var font: UIKit.UIFont {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var textColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var textErrorColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var placeholderColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var numberPlaceholder: Swift.String? {
+    @objc get
+    @objc set(numberPlaceholder)
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var expirationPlaceholder: Swift.String? {
+    @objc get
+    @objc set(expirationPlaceholder)
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var cvcPlaceholder: Swift.String? {
+    @objc get
+    @objc set(cvcPlaceholder)
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var postalCodePlaceholder: Swift.String? {
+    @objc get
+    @objc set(postalCodePlaceholder)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var cursorColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var borderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var borderWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc open var keyboardAppearance: UIKit.UIKeyboardAppearance {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var inputView: UIKit.UIView? {
+    @objc get
+    @objc set(inputView)
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var inputAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set(inputAccessoryView)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var brandImage: UIKit.UIImage? {
+    get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic open var isValid: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set(enabled)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var cardNumber: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var expirationMonth: Swift.Int {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var formattedExpirationMonth: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var expirationYear: Swift.Int {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var formattedExpirationYear: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var cvc: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var postalCode: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var postalCodeEntryEnabled: Swift.Bool {
+    @objc get
+    @objc set(postalCodeEntryEnabled)
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var countryCode: Swift.String? {
+    @objc get
+    @objc set(cCode)
+  }
+  @available(*, deprecated, message: "Use .paymentMethodParams instead. If you must access the STPPaymentMethodCardParams, use .paymentMethodParams.card.")
+  @objc @_Concurrency.MainActor(unsafe) open var cardParams: StripePayments.STPPaymentMethodCardParams {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var paymentMethodParams: StripePayments.STPPaymentMethodParams {
+    @objc get
+    @objc set(callersCardParams)
+  }
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func becomeFirstResponder() -> Swift.Bool
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func resignFirstResponder() -> Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) open func clear()
+  @objc(cvcImageForCardBrand:) @_Concurrency.MainActor(unsafe) open class func cvcImage(for cardBrand: StripePayments.STPCardBrand) -> UIKit.UIImage?
+  @objc(cardBrandChoiceImage) @_Concurrency.MainActor(unsafe) open class func cardBrandChoiceImage() -> UIKit.UIImage?
+  @objc(brandImageForCardBrand:) @_Concurrency.MainActor(unsafe) open class func brandImage(for cardBrand: StripePayments.STPCardBrand) -> UIKit.UIImage?
+  @objc(errorImageForCardBrand:) @_Concurrency.MainActor(unsafe) open class func errorImage(for cardBrand: StripePayments.STPCardBrand) -> UIKit.UIImage?
+  @objc(brandImageRectForBounds:) @_Concurrency.MainActor(unsafe) open func brandImageRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @objc(fieldsRectForBounds:) @_Concurrency.MainActor(unsafe) open func fieldsRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_spi(STP) @objc @_Concurrency.MainActor(unsafe) public var allFields: [StripePaymentsUI.STPFormTextField]
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func menuAttachmentPoint(for configuration: UIKit.UIContextMenuConfiguration) -> CoreFoundation.CGPoint
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func contextMenuInteraction(_ interaction: UIKit.UIContextMenuInteraction, configurationForMenuAtLocation location: CoreFoundation.CGPoint) -> UIKit.UIContextMenuConfiguration?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var contentVerticalAlignment: UIKit.UIControl.ContentVerticalAlignment {
+    @objc get
+    @objc set(contentVerticalAlignment)
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var canBecomeFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var canResignFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc open func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc open func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc open func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc open func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc open func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var cbcEnabledOverride: Swift.Bool? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc open var hasText: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc open func insertText(_ text: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc open func deleteBackward()
+  @objc @_Concurrency.MainActor(unsafe) open class func keyPathsForValuesAffectingIsValid() -> Swift.Set<Swift.String>
+  @_Concurrency.MainActor(unsafe) open var preferredNetworks: [StripePayments.STPCardBrand]? {
+    get
+    set
+  }
+  @available(swift, obsoleted: 1.0)
+  @objc(preferredNetworks) @_Concurrency.MainActor(unsafe) open func preferredNetworks_objc() -> [Foundation.NSNumber]?
+  @available(swift, obsoleted: 1.0)
+  @objc(setPreferredNetworks:) @_Concurrency.MainActor(unsafe) open func setPreferredNetworks_objc(preferredNetworks: [Foundation.NSNumber]?)
+  @_Concurrency.MainActor(unsafe) public var onBehalfOf: Swift.String? {
+    get
+    set
+  }
+  @objc deinit
+}
+@objc public protocol STPPaymentCardTextFieldDelegate : ObjectiveC.NSObjectProtocol {
+  @objc optional func paymentCardTextFieldDidChange(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidBeginEditing(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldWillEndEditing(forReturn textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidEndEditing(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidBeginEditingNumber(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidEndEditingNumber(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidBeginEditingCVC(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidEndEditingCVC(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidBeginEditingExpiration(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidEndEditingExpiration(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidBeginEditingPostalCode(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+  @objc optional func paymentCardTextFieldDidEndEditingPostalCode(_ textField: StripePaymentsUI.STPPaymentCardTextField)
+}
+@_spi(STP) extension StripePaymentsUI.STPPaymentCardTextField : StripeCore.STPAnalyticsProtocol {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static var stp_analyticsIdentifier: Swift.String
+}
+extension StripePaymentsUI.STPCardFormViewStyle : Swift.Equatable {}
+extension StripePaymentsUI.STPCardFormViewStyle : Swift.Hashable {}
+extension StripePaymentsUI.STPCardFormViewStyle : Swift.RawRepresentable {}
+@_spi(STP) extension StripePaymentsUI.STPPostalCodeRequirement : Swift.Equatable {}
+@_spi(STP) extension StripePaymentsUI.STPPostalCodeRequirement : Swift.Hashable {}
+@_spi(STP) extension StripePaymentsUI.STPPostalCodeRequirement : Swift.RawRepresentable {}
+@_spi(STP) extension StripePaymentsUI.STPCardNumberInputTextField.InputMode : Swift.Equatable {}
+@_spi(STP) extension StripePaymentsUI.STPCardNumberInputTextField.InputMode : Swift.Hashable {}
+@_spi(STP) extension StripePaymentsUI.STPFormTextFieldAutoFormattingBehavior : Swift.Equatable {}
+@_spi(STP) extension StripePaymentsUI.STPFormTextFieldAutoFormattingBehavior : Swift.Hashable {}
+@_spi(STP) extension StripePaymentsUI.STPFormTextFieldAutoFormattingBehavior : Swift.RawRepresentable {}
+@_spi(STP) extension StripePaymentsUI.BillingAddressCollectionLevel : Swift.Equatable {}
+@_spi(STP) extension StripePaymentsUI.BillingAddressCollectionLevel : Swift.Hashable {}
+extension StripePaymentsUI.STPPaymentCardTextField : UIKit.UITextFieldDelegate {}

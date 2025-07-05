@@ -1,0 +1,11 @@
+framework module StripePaymentsUI {
+  umbrella header "StripePaymentsUI.h"
+  export *
+
+  module * { export * }
+}
+
+module StripePaymentsUI.Swift {
+  header "StripePaymentsUI-Swift.h"
+  requires objc
+}

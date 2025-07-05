@@ -1,0 +1,1600 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StripeUICore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import DeveloperToolsSupport
+import Foundation
+import QuartzCore
+@_spi(STP) import StripeCore
+@_exported import StripeUICore
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_spi(STP) extension QuartzCore.CALayer {
+  @_spi(STP) public func applyShadow(shadow: StripeUICore.ElementsAppearance.Shadow?)
+}
+@_spi(STP) extension Foundation.Locale {
+  @_spi(STP) public func sortedByTheirLocalizedNames<T>(_ regionCollection: [T], thisRegionFirst: Swift.Bool = false) -> [T] where T : StripeUICore.RegionCodeProvider
+}
+@_spi(STP) extension UIKit.NSDirectionalEdgeInsets {
+  @_spi(STP) public static func insets(top: CoreFoundation.CGFloat = 0, leading: CoreFoundation.CGFloat = 0, bottom: CoreFoundation.CGFloat = 0, trailing: CoreFoundation.CGFloat = 0) -> UIKit.NSDirectionalEdgeInsets
+  @_spi(STP) public static func insets(amount: CoreFoundation.CGFloat) -> UIKit.NSDirectionalEdgeInsets
+}
+@_spi(STP) extension UIKit.UIBarButtonItem {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public class func flexibleSpace() -> Self
+}
+@_spi(STP) extension UIKit.UIButton {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static let minimumTapSize: CoreFoundation.CGSize
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public class var doneButtonTitle: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public class var editButtonTitle: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public class func make(type buttonType: UIKit.UIButton.ButtonType, didTap: @escaping () -> Swift.Void) -> UIKit.UIButton
+}
+@_spi(STP) extension UIKit.UIColor {
+  @_spi(STP) public func lighten(by amount: CoreFoundation.CGFloat) -> UIKit.UIColor
+  @_spi(STP) public func darken(by amount: CoreFoundation.CGFloat) -> UIKit.UIColor
+  @_spi(STP) public static func dynamic(light: UIKit.UIColor, dark: UIKit.UIColor) -> UIKit.UIColor
+  @_spi(STP) public var luminance: CoreFoundation.CGFloat {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func contrastRatio(to other: UIKit.UIColor) -> CoreFoundation.CGFloat
+  @_spi(STP) public var contrastingColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var roundToBlackOrWhite: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func adjustedForContrast(with backgroundColor: UIKit.UIColor, minimumRatio: CoreFoundation.CGFloat = 4.5) -> UIKit.UIColor
+  @_spi(STP) public var disabledColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var translucentMaskColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func disabled(_ isDisabled: Swift.Bool = true) -> UIKit.UIColor
+  @_spi(STP) public var rgba: (red: CoreFoundation.CGFloat, green: CoreFoundation.CGFloat, blue: CoreFoundation.CGFloat, alpha: CoreFoundation.CGFloat) {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var brightness: CoreFoundation.CGFloat {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var perceivedBrightness: CoreFoundation.CGFloat {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var isBright: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var isDark: Swift.Bool {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) extension UIKit.UIFont {
+  @_spi(STP) public func scaled(withTextStyle textStyle: UIKit.UIFont.TextStyle, maximumPointSize: CoreFoundation.CGFloat? = nil, compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIFont
+}
+@_spi(STP) extension UIKit.UISpringTimingParameters {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(mass: CoreFoundation.CGFloat, dampingRatio: CoreFoundation.CGFloat, frequencyResponse: CoreFoundation.CGFloat)
+}
+@_spi(STP) extension UIKit.UIStackView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func showArrangedSubview(at index: Swift.Int, animated: Swift.Bool)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func hideArrangedSubview(at index: Swift.Int, animated: Swift.Bool)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func toggleArrangedSubview(_ view: UIKit.UIView, shouldShow: Swift.Bool, animated: Swift.Bool)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func removeArrangedSubview(at index: Swift.Int, animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func removeArrangedSubview(_ view: UIKit.UIView, animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func toggleArrangedSubviews(_ views: [UIKit.UIView], shouldShow: Swift.Bool, animated: Swift.Bool, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+}
+@_spi(STP) extension UIKit.UITraitCollection {
+  @_spi(STP) public var isDarkMode: Swift.Bool {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) extension UIKit.UIView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func addAndPinSubview(_ view: UIKit.UIView, directionalLayoutMargins: UIKit.NSDirectionalEdgeInsets)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func addAndPinSubview(_ view: UIKit.UIView, insets: UIKit.NSDirectionalEdgeInsets = .zero)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func addAndPinSubviewToSafeArea(_ view: UIKit.UIView, insets: UIKit.NSDirectionalEdgeInsets = .zero)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static func animateAlongsideKeyboard(_ notification: Foundation.Notification, animations: @escaping () -> Swift.Void)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func setHiddenIfNecessary(_ shouldHide: Swift.Bool)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func firstResponder() -> UIKit.UIView?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func updateTrailingAnchor(constant: CoreFoundation.CGFloat)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static func makeSpacerView(width: CoreFoundation.CGFloat? = nil, height: CoreFoundation.CGFloat? = nil) -> UIKit.UIView
+}
+@_spi(STP) public class SubtitleElement : StripeUICore.Element {
+  @_spi(STP) final public let view: UIKit.UIView
+  @_spi(STP) final public let collectsUserInput: Swift.Bool
+  @_spi(STP) weak public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) public init(view: UIKit.UIView, isHorizontalMode: Swift.Bool)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension UIKit.UIViewController {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func animateHeightChange(forceAnimation: Swift.Bool = false, duration: CoreFoundation.CGFloat = 0.5, _ animations: (() -> Swift.Void)? = nil, postLayoutAnimations: (() -> Swift.Void)? = nil, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var rootParent: UIKit.UIViewController {
+    @_spi(STP) get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func findTopMostPresentedViewController() -> UIKit.UIViewController
+}
+@_spi(STP) extension UIKit.UIWindow {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func findTopMostPresentedViewController() -> UIKit.UIViewController?
+}
+@_spi(STP) @objc(STP_Internal_ActivityIndicator) @_Concurrency.MainActor(unsafe) final public class ActivityIndicator : UIKit.UIView {
+  @_spi(STP) public enum Size {
+    @_spi(STP) case medium
+    @_spi(STP) case large
+    @_spi(STP) public static func == (a: StripeUICore.ActivityIndicator.Size, b: StripeUICore.ActivityIndicator.Size) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public var hidesWhenStopped: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public var color: UIKit.UIColor {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public var isAnimating: Swift.Bool {
+    get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreFoundation.CGSize {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc convenience dynamic public init()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(size: StripeUICore.ActivityIndicator.Size)
+  @_spi(STP) @objc deinit
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func tintColorDidChange()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func willMove(toWindow newWindow: UIKit.UIWindow?)
+}
+@_spi(STP) extension StripeUICore.ActivityIndicator {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public func startAnimating()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public func stopAnimating()
+}
+@_spi(STP) @_hasMissingDesignatedInitializers @objc(STP_Internal_Button) @_Concurrency.MainActor(unsafe) public class Button : UIKit.UIControl {
+  @_spi(STP) public struct Configuration {
+    @_spi(STP) public static let tintColor: UIKit.UIColor
+    @_spi(STP) public var font: UIKit.UIFont
+    @_spi(STP) public var cornerRadius: CoreFoundation.CGFloat
+    @_spi(STP) public var borderWidth: CoreFoundation.CGFloat
+    @_spi(STP) public var foregroundColor: UIKit.UIColor?
+    @_spi(STP) public var backgroundColor: UIKit.UIColor?
+    @_spi(STP) public var borderColor: UIKit.UIColor?
+    @_spi(STP) public var disabledForegroundColor: UIKit.UIColor?
+    @_spi(STP) public var disabledBackgroundColor: UIKit.UIColor?
+    @_spi(STP) public var disabledBorderColor: UIKit.UIColor?
+    @_spi(STP) public var colorTransforms: StripeUICore.Button.ColorTransformConfiguration
+    @_spi(STP) public var titleAttributes: [Foundation.NSAttributedString.Key : Any]?
+    @_spi(STP) public var insets: UIKit.NSDirectionalEdgeInsets
+  }
+  @_spi(STP) public struct ColorTransformConfiguration {
+    @_spi(STP) public var disabledForeground: StripeUICore.Button.ColorTransform?
+    @_spi(STP) public var disabledBackground: StripeUICore.Button.ColorTransform?
+    @_spi(STP) public var disabledBorder: StripeUICore.Button.ColorTransform?
+    @_spi(STP) public var highlightedForeground: StripeUICore.Button.ColorTransform?
+    @_spi(STP) public var highlightedBackground: StripeUICore.Button.ColorTransform?
+    @_spi(STP) public var highlightedBorder: StripeUICore.Button.ColorTransform?
+  }
+  @_spi(STP) public enum ColorTransform {
+    @_spi(STP) case darken(amount: CoreFoundation.CGFloat)
+    @_spi(STP) case lighten(amount: CoreFoundation.CGFloat)
+    @_spi(STP) case setAlpha(amount: CoreFoundation.CGFloat)
+  }
+  @_spi(STP) public enum IconPosition {
+    @_spi(STP) case leading
+    @_spi(STP) case trailing
+    @_spi(STP) public static func == (a: StripeUICore.Button.IconPosition, b: StripeUICore.Button.IconPosition) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var state: UIKit.UIControl.State {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var isEnabled: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var isHighlighted: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var configuration: StripeUICore.Button.Configuration {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var icon: UIKit.UIImage? {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var iconPosition: StripeUICore.Button.IconPosition {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var title: Swift.String? {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var isLoading: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var adjustsFontForContentSizeCategory: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc convenience dynamic public init()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(title: Swift.String)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(configuration: StripeUICore.Button.Configuration)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(configuration: StripeUICore.Button.Configuration, title: Swift.String?)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func tintColorDidChange()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.Button {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func updateConstraints()
+}
+@_spi(STP) extension StripeUICore.Button.Configuration {
+  @_spi(STP) public static func primary() -> StripeUICore.Button.Configuration
+  @_spi(STP) public static func secondary() -> StripeUICore.Button.Configuration
+  @_spi(STP) public static func plain() -> StripeUICore.Button.Configuration
+}
+@_spi(STP) @_hasMissingDesignatedInitializers @objc(STP_Internal_OneTimeCodeTextField) @_Concurrency.MainActor(unsafe) final public class OneTimeCodeTextField : UIKit.UIControl {
+  @_spi(STP) public struct Configuration {
+    @_spi(STP) public init(numberOfDigits: Swift.Int = 6, itemSpacing: CoreFoundation.CGFloat = 6, enableDigitGrouping: Swift.Bool = true, font: UIKit.UIFont = .systemFont(ofSize: 20), itemCornerRadius: CoreFoundation.CGFloat = 8, itemHeight: CoreFoundation.CGFloat = 60, itemFocusRingThickness: CoreFoundation.CGFloat = 2, itemFocusBackgroundColor: UIKit.UIColor? = nil)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public var value: Swift.String {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public var isComplete: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public var canBecomeFirstResponder: Swift.Bool {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public var isEnabled: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var keyboardType: UIKit.UIKeyboardType
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var textContentType: UIKit.UITextContentType?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var selectedTextRange: UIKit.UITextRange? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var inputDelegate: (any UIKit.UITextInputDelegate)?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var tokenizer: any UIKit.UITextInputTokenizer {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(configuration: StripeUICore.OneTimeCodeTextField.Configuration = Configuration(), theme: StripeUICore.ElementsAppearance = .default)
+  @_spi(STP) @objc deinit
+  @_spi(STP) @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override final public func becomeFirstResponder() -> Swift.Bool
+  @_spi(STP) @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override final public func resignFirstResponder() -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+}
+@_spi(STP) extension StripeUICore.OneTimeCodeTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func canPerformAction(_ action: ObjectiveC.Selector, withSender sender: Any?) -> Swift.Bool
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override final public func paste(_ sender: Any?)
+}
+@_spi(STP) extension StripeUICore.OneTimeCodeTextField {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) final public func performInvalidCodeAnimation(shouldClearValue: Swift.Bool = true)
+}
+@_spi(STP) extension StripeUICore.OneTimeCodeTextField : UIKit.UIKeyInput {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var hasText: Swift.Bool {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func insertText(_ text: Swift.String)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func deleteBackward()
+}
+@_spi(STP) extension StripeUICore.OneTimeCodeTextField : UIKit.UITextInput {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var markedTextRange: UIKit.UITextRange? {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var markedTextStyle: [Foundation.NSAttributedString.Key : Any]? {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set(markedTextStyle)
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var beginningOfDocument: UIKit.UITextPosition {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public var endOfDocument: UIKit.UITextPosition {
+    @_spi(STP) @objc get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func text(in range: UIKit.UITextRange) -> Swift.String?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func replace(_ range: UIKit.UITextRange, withText text: Swift.String)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func setMarkedText(_ markedText: Swift.String?, selectedRange: Foundation.NSRange)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func unmarkText()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func textRange(from fromPosition: UIKit.UITextPosition, to toPosition: UIKit.UITextPosition) -> UIKit.UITextRange?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func position(from position: UIKit.UITextPosition, offset: Swift.Int) -> UIKit.UITextPosition?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func position(from position: UIKit.UITextPosition, in direction: UIKit.UITextLayoutDirection, offset: Swift.Int) -> UIKit.UITextPosition?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func compare(_ position: UIKit.UITextPosition, to other: UIKit.UITextPosition) -> Foundation.ComparisonResult
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func offset(from: UIKit.UITextPosition, to toPosition: UIKit.UITextPosition) -> Swift.Int
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func position(within range: UIKit.UITextRange, farthestIn direction: UIKit.UITextLayoutDirection) -> UIKit.UITextPosition?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func characterRange(byExtending position: UIKit.UITextPosition, in direction: UIKit.UITextLayoutDirection) -> UIKit.UITextRange?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func baseWritingDirection(for position: UIKit.UITextPosition, in direction: UIKit.UITextStorageDirection) -> UIKit.NSWritingDirection
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func setBaseWritingDirection(_ writingDirection: UIKit.NSWritingDirection, for range: UIKit.UITextRange)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func firstRect(for range: UIKit.UITextRange) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func caretRect(for position: UIKit.UITextPosition) -> CoreFoundation.CGRect
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func selectionRects(for range: UIKit.UITextRange) -> [UIKit.UITextSelectionRect]
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func closestPosition(to point: CoreFoundation.CGPoint) -> UIKit.UITextPosition?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func closestPosition(to point: CoreFoundation.CGPoint, within range: UIKit.UITextRange) -> UIKit.UITextPosition?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc final public func characterRange(at point: CoreFoundation.CGPoint) -> UIKit.UITextRange?
+}
+@_spi(STP) public protocol CheckboxButtonDelegate : AnyObject {
+  @_spi(STP) func checkboxButton(_ checkboxButton: StripeUICore.CheckboxButton, shouldOpen url: Foundation.URL) -> Swift.Bool
+}
+@_spi(STP) @_hasMissingDesignatedInitializers @objc(STP_Internal_CheckboxButton) @_Concurrency.MainActor(unsafe) public class CheckboxButton : UIKit.UIControl {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) weak public var delegate: (any StripeUICore.CheckboxButtonDelegate)?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var isSelected: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var isEnabled: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var hasReceivedTap: Swift.Bool {
+    get
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var isHidden: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var theme: StripeUICore.ElementsAppearance {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(description: Swift.String? = nil, theme: StripeUICore.ElementsAppearance = .default, alwaysEmphasizeText: Swift.Bool = false)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(text: Swift.String, description: Swift.String? = nil, theme: StripeUICore.ElementsAppearance = .default, alwaysEmphasizeText: Swift.Bool = false)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) convenience public init(attributedText: Foundation.NSAttributedString, description: Swift.String? = nil, theme: StripeUICore.ElementsAppearance = .default)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func setText(_ text: Swift.String)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func setAttributedText(_ attributedText: Foundation.NSAttributedString)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.CheckboxButton : StripeUICore.EventHandler {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func handleEvent(_ event: StripeUICore.STPEvent)
+}
+@_spi(STP) extension StripeUICore.CheckboxButton : UIKit.UITextViewDelegate {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc dynamic public func textView(_ textView: UIKit.UITextView, shouldInteractWith url: Foundation.URL, in characterRange: Foundation.NSRange) -> Swift.Bool
+}
+@_spi(STP) final public class CheckboxElement {
+  @_spi(STP) weak final public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) final public var checkboxButton: StripeUICore.CheckboxButton {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var isSelected: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) public init(theme: StripeUICore.ElementsAppearance, label: Swift.String, isSelectedByDefault: Swift.Bool, didToggle: ((Swift.Bool) -> Swift.Void)? = nil)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.CheckboxElement : StripeUICore.Element {
+  @_spi(STP) final public var collectsUserInput: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var view: UIKit.UIView {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) extension StripeUICore.CheckboxElement {
+  @_spi(STP) final public var debugDescription: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public protocol ContainerElement : StripeUICore.Element, StripeUICore.ElementDelegate {
+  @_spi(STP) var elements: [any StripeUICore.Element] { get }
+}
+@_spi(STP) extension StripeUICore.ContainerElement {
+  @_spi(STP) public var collectsUserInput: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func beginEditing() -> Swift.Bool
+  @_spi(STP) public var validationState: StripeUICore.ElementValidationState {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func didUpdate(element: any StripeUICore.Element)
+  @_spi(STP) public func continueToNextField(element: any StripeUICore.Element)
+}
+@_spi(STP) extension StripeUICore.ContainerElement {
+  @_spi(STP) public var debugDescription: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var subElementDebugDescription: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public class DateFieldElement {
+  @_spi(STP) public typealias DidUpdateSelectedDate = (Foundation.Date) -> Swift.Void
+  @_spi(STP) weak public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) public var selectedDate: Foundation.Date? {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var validationState: StripeUICore.ElementValidationState {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var didUpdate: StripeUICore.DateFieldElement.DidUpdateSelectedDate?
+  @_spi(STP) public init(label: Swift.String? = nil, defaultDate: Foundation.Date? = nil, minimumDate: Foundation.Date? = nil, maximumDate: Foundation.Date? = nil, locale: Foundation.Locale = .current, timeZone: Foundation.TimeZone = .current, theme: StripeUICore.ElementsAppearance = .default, customDateFormatter: Foundation.DateFormatter? = nil, didUpdate: StripeUICore.DateFieldElement.DidUpdateSelectedDate? = nil)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.DateFieldElement : StripeUICore.Element {
+  @_spi(STP) public var collectsUserInput: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var view: UIKit.UIView {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func beginEditing() -> Swift.Bool
+}
+@_spi(STP) final public class DropdownFieldElement {
+  @_spi(STP) public typealias DidUpdateSelectedIndex = (Swift.Int) -> Swift.Void
+  @_spi(STP) public struct DropdownItem {
+    @_spi(STP) public init(pickerDisplayName: Foundation.NSAttributedString, labelDisplayName: Foundation.NSAttributedString, accessibilityValue: Swift.String, rawData: Swift.String, isPlaceholder: Swift.Bool = false, isDisabled: Swift.Bool = false)
+    @_spi(STP) public init(pickerDisplayName: Swift.String, labelDisplayName: Swift.String, accessibilityValue: Swift.String, rawData: Swift.String, isPlaceholder: Swift.Bool = false, isDisabled: Swift.Bool = false)
+    @_spi(STP) public let pickerDisplayName: Foundation.NSAttributedString
+    @_spi(STP) public let labelDisplayName: Foundation.NSAttributedString
+    @_spi(STP) public let accessibilityValue: Swift.String
+    @_spi(STP) public let rawData: Swift.String
+    @_spi(STP) public let isPlaceholder: Swift.Bool
+    @_spi(STP) public let isDisabled: Swift.Bool
+  }
+  @_spi(STP) weak final public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) final public var items: [StripeUICore.DropdownFieldElement.DropdownItem] {
+    get
+  }
+  @_spi(STP) final public var nonPlacerholderItems: [StripeUICore.DropdownFieldElement.DropdownItem] {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var selectedItem: StripeUICore.DropdownFieldElement.DropdownItem {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var selectedIndex: Swift.Int {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) final public var isEditing: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var didUpdate: StripeUICore.DropdownFieldElement.DidUpdateSelectedIndex?
+  @_spi(STP) final public let theme: StripeUICore.ElementsAppearance
+  @_spi(STP) final public let hasPadding: Swift.Bool
+  @_spi(STP) final public let label: Swift.String?
+  @_spi(STP) public init(items: [StripeUICore.DropdownFieldElement.DropdownItem], defaultIndex: Swift.Int = 0, label: Swift.String?, theme: StripeUICore.ElementsAppearance = .default, hasPadding: Swift.Bool = true, disableDropdownWithSingleElement: Swift.Bool = false, isOptional: Swift.Bool = false, didUpdate: StripeUICore.DropdownFieldElement.DidUpdateSelectedIndex? = nil)
+  @_spi(STP) final public func select(index: Swift.Int, shouldAutoAdvance: Swift.Bool = true)
+  @_spi(STP) final public func update(items: [StripeUICore.DropdownFieldElement.DropdownItem])
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.DropdownFieldElement : StripeUICore.Element {
+  @_spi(STP) final public var collectsUserInput: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var view: UIKit.UIView {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public func beginEditing() -> Swift.Bool
+}
+@_spi(STP) extension StripeUICore.DropdownFieldElement {
+  @_spi(STP) final public func pickerView(_ pickerView: UIKit.UIPickerView, didSelectRow row: Swift.Int, inComponent component: Swift.Int)
+}
+@_spi(STP) extension StripeUICore.DropdownFieldElement {
+  @_spi(STP) final public var debugDescription: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public protocol Element : AnyObject, Swift.CustomDebugStringConvertible {
+  @_spi(STP) var delegate: (any StripeUICore.ElementDelegate)? { get set }
+  @_spi(STP) var view: UIKit.UIView { get }
+  @_spi(STP) func beginEditing() -> Swift.Bool
+  @_spi(STP) var validationState: StripeUICore.ElementValidationState { get }
+  @_spi(STP) var subLabelText: Swift.String? { get }
+  @_spi(STP) var collectsUserInput: Swift.Bool { get }
+}
+@_spi(STP) extension StripeUICore.Element {
+  @_spi(STP) public func beginEditing() -> Swift.Bool
+  @_spi(STP) public var validationState: StripeUICore.ElementValidationState {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var subLabelText: Swift.String? {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public protocol ElementDelegate : AnyObject {
+  @_spi(STP) func didUpdate(element: any StripeUICore.Element)
+  @_spi(STP) func continueToNextField(element: any StripeUICore.Element)
+}
+@_spi(STP) public protocol PresentingViewControllerDelegate : StripeUICore.ElementDelegate {
+  @_spi(STP) func presentViewController(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+}
+@_spi(STP) @frozen public enum ElementValidationState {
+  @_spi(STP) case valid
+  @_spi(STP) case invalid(error: any StripeUICore.ElementValidationError, shouldDisplay: Swift.Bool)
+  @_spi(STP) public var isValid: Swift.Bool {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public protocol ElementValidationError : Swift.Error {
+  @_spi(STP) var localizedDescription: Swift.String { get }
+}
+@_spi(STP) extension StripeUICore.Element {
+  @_spi(STP) public var debugDescription: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public enum ElementsUI {
+  @_spi(STP) public static let contentViewInsets: UIKit.NSDirectionalEdgeInsets
+  @_spi(STP) public static let fieldBorderColor: UIKit.UIColor
+  @_spi(STP) public static let fieldBorderWidth: CoreFoundation.CGFloat
+  @_spi(STP) public static let textFieldFont: UIKit.UIFont
+  @_spi(STP) public static let sectionTitleFont: UIKit.UIFont
+  @_spi(STP) public static let sectionSpacing: CoreFoundation.CGFloat
+  @_spi(STP) public static let formSpacing: CoreFoundation.CGFloat
+  @_spi(STP) public static let defaultCornerRadius: CoreFoundation.CGFloat
+  @_spi(STP) public static let backgroundColor: UIKit.UIColor
+  @_spi(STP) public static let disabledBackgroundColor: UIKit.UIColor
+  @_spi(STP) public static func makeErrorLabel(theme: StripeUICore.ElementsAppearance) -> UIKit.UILabel
+  @_spi(STP) public static func makeSmallFootnote(theme: StripeUICore.ElementsAppearance) -> UIKit.UITextView
+  @_spi(STP) public static func makeNoticeTextField(theme: StripeUICore.ElementsAppearance) -> UIKit.UITextView
+  @_spi(STP) public static func makeSectionTitleLabel(theme: StripeUICore.ElementsAppearance) -> UIKit.UILabel
+}
+@_spi(STP) public struct ElementsAppearance {
+  @_spi(STP) public static let `default`: StripeUICore.ElementsAppearance
+  @_spi(STP) public var fonts: StripeUICore.ElementsAppearance.Font
+  @_spi(STP) public var colors: StripeUICore.ElementsAppearance.Color
+  @_spi(STP) public var borderWidth: CoreFoundation.CGFloat
+  @_spi(STP) public var cornerRadius: CoreFoundation.CGFloat
+  @_spi(STP) public var shadow: StripeUICore.ElementsAppearance.Shadow?
+  @_spi(STP) public var textFieldInsets: UIKit.NSDirectionalEdgeInsets
+  @_spi(STP) public var iconStyle: StripeUICore.ElementsAppearance.IconStyle
+  @_spi(STP) public var sectionSpacing: CoreFoundation.CGFloat
+  @_spi(STP) public struct Font {
+    @_spi(STP) public init()
+    @_spi(STP) public var subheadline: UIKit.UIFont
+    @_spi(STP) public var subheadlineBold: UIKit.UIFont
+    @_spi(STP) public var sectionHeader: UIKit.UIFont
+    @_spi(STP) public var caption: UIKit.UIFont
+    @_spi(STP) public var footnote: UIKit.UIFont
+    @_spi(STP) public var error: UIKit.UIFont
+    @_spi(STP) public var smallFootnote: UIKit.UIFont
+    @_spi(STP) public var footnoteEmphasis: UIKit.UIFont
+  }
+  @_spi(STP) public struct Color {
+    @_spi(STP) public init()
+    @_spi(STP) public var primary: UIKit.UIColor
+    @_spi(STP) public var parentBackground: UIKit.UIColor
+    @_spi(STP) public var componentBackground: UIKit.UIColor
+    @_spi(STP) public var disabledBackground: UIKit.UIColor
+    @_spi(STP) public var border: UIKit.UIColor
+    @_spi(STP) public var divider: UIKit.UIColor
+    @_spi(STP) public var textFieldText: UIKit.UIColor
+    @_spi(STP) public var bodyText: UIKit.UIColor
+    @_spi(STP) public var secondaryText: UIKit.UIColor
+    @_spi(STP) public var placeholderText: UIKit.UIColor
+    @_spi(STP) public var danger: UIKit.UIColor
+  }
+  @_spi(STP) public struct Shadow {
+    @_spi(STP) public var color: UIKit.UIColor
+    @_spi(STP) public var opacity: CoreFoundation.CGFloat
+    @_spi(STP) public var offset: CoreFoundation.CGSize
+    @_spi(STP) public var radius: CoreFoundation.CGFloat
+    @_spi(STP) public init(color: UIKit.UIColor, opacity: CoreFoundation.CGFloat, offset: CoreFoundation.CGSize, radius: CoreFoundation.CGFloat)
+  }
+  @_spi(STP) @frozen public enum IconStyle {
+    @_spi(STP) case filled
+    @_spi(STP) case outlined
+    @_spi(STP) public static func == (a: StripeUICore.ElementsAppearance.IconStyle, b: StripeUICore.ElementsAppearance.IconStyle) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+}
+@_spi(STP) extension StripeUICore.AddressSectionElement {
+  @_spi(STP) @objc @_Concurrency.MainActor(unsafe) public class DummyAddressLine : ObjectiveC.NSObject, StripeUICore.Element, UIKit.UIGestureRecognizerDelegate {
+    @_spi(STP) @_Concurrency.MainActor(unsafe) final public let collectsUserInput: Swift.Bool
+    @_spi(STP) @_Concurrency.MainActor(unsafe) public var delegate: (any StripeUICore.ElementDelegate)?
+    @_spi(STP) @_Concurrency.MainActor(unsafe) public var view: UIKit.UIView {
+      @_spi(STP) get
+      @_spi(STP) set
+    }
+    @_spi(STP) @_Concurrency.MainActor(unsafe) public var validationState: StripeUICore.ElementValidationState {
+      @_spi(STP) get
+    }
+    @_spi(STP) @_Concurrency.MainActor(unsafe) final public let theme: StripeUICore.ElementsAppearance
+    @_spi(STP) @_Concurrency.MainActor(unsafe) public func beginEditing() -> Swift.Bool
+    @_spi(STP) @_Concurrency.MainActor(unsafe) public init(theme: StripeUICore.ElementsAppearance, didTap: @escaping () -> Swift.Void = {})
+    @_spi(STP) @objc deinit
+  }
+}
+@_spi(STP) public class AddressSectionElement : StripeUICore.ContainerElement {
+  @_spi(STP) public typealias DidUpdateAddress = (StripeUICore.AddressSectionElement.AddressDetails) -> Swift.Void
+  @_spi(STP) public struct AddressDetails : Swift.Equatable {
+    @_spi(STP) public static let empty: StripeUICore.AddressSectionElement.AddressDetails
+    @_spi(STP) public var name: Swift.String?
+    @_spi(STP) public var phone: Swift.String?
+    @_spi(STP) public var address: StripeUICore.AddressSectionElement.AddressDetails.Address
+    @_spi(STP) public init(name: Swift.String? = nil, phone: Swift.String? = nil, address: StripeUICore.AddressSectionElement.AddressDetails.Address = .init())
+    @_spi(STP) public struct Address : Swift.Equatable {
+      @_spi(STP) public var city: Swift.String?
+      @_spi(STP) public var country: Swift.String?
+      @_spi(STP) public var line1: Swift.String?
+      @_spi(STP) public var line2: Swift.String?
+      @_spi(STP) public var postalCode: Swift.String?
+      @_spi(STP) public var state: Swift.String?
+      @_spi(STP) public init(city: Swift.String? = nil, country: Swift.String? = nil, line1: Swift.String? = nil, line2: Swift.String? = nil, postalCode: Swift.String? = nil, state: Swift.String? = nil)
+      @_spi(STP) public static func == (a: StripeUICore.AddressSectionElement.AddressDetails.Address, b: StripeUICore.AddressSectionElement.AddressDetails.Address) -> Swift.Bool
+    }
+    @_spi(STP) public static func == (a: StripeUICore.AddressSectionElement.AddressDetails, b: StripeUICore.AddressSectionElement.AddressDetails) -> Swift.Bool
+  }
+  @_spi(STP) public enum CollectionMode : Swift.Equatable {
+    @_spi(STP) case all(autocompletableCountries: [Swift.String] = [])
+    @_spi(STP) case countryAndPostal(countriesRequiringPostalCollection: [Swift.String] = ["US", "GB", "CA"])
+    @_spi(STP) case autoCompletable
+    @_spi(STP) case noCountry
+    @_spi(STP) public static func == (a: StripeUICore.AddressSectionElement.CollectionMode, b: StripeUICore.AddressSectionElement.CollectionMode) -> Swift.Bool
+  }
+  @_spi(STP) public struct AdditionalFields {
+    @_spi(STP) public init(name: StripeUICore.AddressSectionElement.AdditionalFields.FieldConfiguration = .disabled, phone: StripeUICore.AddressSectionElement.AdditionalFields.FieldConfiguration = .disabled, billingSameAsShippingCheckbox: StripeUICore.AddressSectionElement.AdditionalFields.FieldConfiguration = .disabled)
+    @_spi(STP) public enum FieldConfiguration {
+      @_spi(STP) case disabled
+      @_spi(STP) case enabled(isOptional: Swift.Bool = false)
+    }
+    @_spi(STP) public let name: StripeUICore.AddressSectionElement.AdditionalFields.FieldConfiguration
+    @_spi(STP) public let phone: StripeUICore.AddressSectionElement.AdditionalFields.FieldConfiguration
+    @_spi(STP) public let billingSameAsShippingCheckbox: StripeUICore.AddressSectionElement.AdditionalFields.FieldConfiguration
+  }
+  @_spi(STP) final public let elements: [any StripeUICore.Element]
+  @_spi(STP) weak public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) public var view: UIKit.UIView {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) final public let name: StripeUICore.TextFieldElement?
+  @_spi(STP) final public let phone: StripeUICore.PhoneNumberElement?
+  @_spi(STP) final public let country: StripeUICore.DropdownFieldElement
+  @_spi(STP) public var autoCompleteLine: StripeUICore.AddressSectionElement.DummyAddressLine? {
+    get
+  }
+  @_spi(STP) public var line1: StripeUICore.TextFieldElement? {
+    get
+  }
+  @_spi(STP) public var line2: StripeUICore.TextFieldElement? {
+    get
+  }
+  @_spi(STP) public var city: StripeUICore.TextFieldElement? {
+    get
+  }
+  @_spi(STP) public var state: (any StripeUICore.TextOrDropdownElement)? {
+    get
+  }
+  @_spi(STP) public var postalCode: StripeUICore.TextFieldElement? {
+    get
+  }
+  @_spi(STP) final public let sameAsCheckbox: StripeUICore.CheckboxElement
+  @_spi(STP) public var collectionMode: StripeUICore.AddressSectionElement.CollectionMode {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) public var selectedCountryCode: Swift.String {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) final public let countryCodes: [Swift.String]
+  @_spi(STP) public var didUpdate: StripeUICore.AddressSectionElement.DidUpdateAddress?
+  @_spi(STP) public init(title: Swift.String? = nil, countries: [Swift.String]? = nil, locale: Foundation.Locale = .current, addressSpecProvider: StripeUICore.AddressSpecProvider = .shared, defaults: StripeUICore.AddressSectionElement.AddressDetails = .empty, collectionMode: StripeUICore.AddressSectionElement.CollectionMode = .all(), additionalFields: StripeUICore.AddressSectionElement.AdditionalFields = .init(), theme: StripeUICore.ElementsAppearance = .default, presentAutoComplete: @escaping () -> Swift.Void = { })
+  @_spi(STP) public func updateBillingSameAsShippingDefaultAddress(_ defaultAddress: StripeUICore.AddressSectionElement.AddressDetails.Address)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.AddressSectionElement : StripeUICore.Element {
+  @_spi(STP) @discardableResult
+  public func beginEditing() -> Swift.Bool
+}
+@_spi(STP) extension StripeUICore.AddressSectionElement : StripeUICore.ElementDelegate {
+  @_spi(STP) public func didUpdate(element: any StripeUICore.Element)
+}
+@_spi(STP) extension StripeUICore.AddressSectionElement.AddressDetails {
+  @_spi(STP) public init(billingAddress: StripeCore.BillingAddress, phone: Swift.String?)
+}
+@_spi(STP) @_hasMissingDesignatedInitializers public class AddressSpecProvider {
+  @_spi(STP) public static var shared: StripeUICore.AddressSpecProvider
+  @_spi(STP) public var countries: [Swift.String] {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func loadAddressSpecs(completion: (() -> Swift.Void)? = nil)
+  #if compiler(>=5.3) && $AsyncAwait
+  @_spi(STP) public func loadAddressSpecs() async
+  #endif
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @_hasMissingDesignatedInitializers public class BSBNumberProvider {
+  @_spi(STP) public static var shared: StripeUICore.BSBNumberProvider
+  @_spi(STP) public func loadBSBData(completion: (() -> Swift.Void)? = nil)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.DropdownFieldElement {
+  @_spi(STP) public enum Address {
+    @_spi(STP) public static func makeCountry(label: Swift.String, countryCodes: [Swift.String], theme: StripeUICore.ElementsAppearance = .default, defaultCountry: Swift.String? = nil, locale: Foundation.Locale = Locale.current, disableDropdownWithSingleCountry: Swift.Bool = false) -> StripeUICore.DropdownFieldElement
+  }
+}
+@_spi(STP) public struct IDNumberTextFieldConfiguration : StripeUICore.TextFieldElementConfiguration {
+  @_spi(STP) public enum IDNumberType {
+    @_spi(STP) case BR_CPF
+    @_spi(STP) case BR_CPF_CNPJ
+    @_spi(STP) case SG_NRIC_OR_FIN
+    @_spi(STP) case US_SSN_LAST4
+    @_spi(STP) public static func == (a: StripeUICore.IDNumberTextFieldConfiguration.IDNumberType, b: StripeUICore.IDNumberTextFieldConfiguration.IDNumberType) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) public let label: Swift.String
+  @_spi(STP) public let defaultValue: Swift.String?
+  @_spi(STP) public init(type: StripeUICore.IDNumberTextFieldConfiguration.IDNumberType?, label: Swift.String, defaultValue: Swift.String?)
+  @_spi(STP) public var disallowedCharacters: Foundation.CharacterSet {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func maxLength(for text: Swift.String) -> Swift.Int
+  @_spi(STP) public func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+  @_spi(STP) public func makeDisplayText(for text: Swift.String) -> Foundation.NSAttributedString
+  @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+}
+@_spi(STP) extension StripeUICore.TextFieldElement {
+  @_spi(STP) public enum Account {
+    @_spi(STP) public static func makeBSB(defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance = .default) -> StripeUICore.TextFieldElement
+    @_spi(STP) public static func makeAUBECSAccountNumber(defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance = .default) -> StripeUICore.TextFieldElement
+    @_spi(STP) public static func makeSortCode(defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance = .default) -> StripeUICore.TextFieldElement
+    @_spi(STP) public static func makeBacsAccountNumber(defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance = .default) -> StripeUICore.TextFieldElement
+  }
+}
+@_spi(STP) extension StripeUICore.TextFieldElement {
+  @_spi(STP) public enum Address {
+    @_spi(STP) public static func makeLine1(defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance) -> StripeUICore.TextFieldElement
+    @_spi(STP) public static func makeAutoCompleteLine(defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance) -> StripeUICore.TextFieldElement
+  }
+}
+@_spi(STP) extension StripeUICore.TextFieldElement {
+  @_spi(STP) public struct NameConfiguration : StripeUICore.TextFieldElementConfiguration {
+    @_spi(STP) @frozen public enum NameType {
+      @_spi(STP) case given, family, full, onAccount
+      @_spi(STP) public static func == (a: StripeUICore.TextFieldElement.NameConfiguration.NameType, b: StripeUICore.TextFieldElement.NameConfiguration.NameType) -> Swift.Bool
+      @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+      @_spi(STP) public var hashValue: Swift.Int {
+        @_spi(STP) get
+      }
+    }
+    @_spi(STP) public let defaultValue: Swift.String?
+    @_spi(STP) public let label: Swift.String
+    @_spi(STP) public let isOptional: Swift.Bool
+    @_spi(STP) public let editConfiguration: StripeUICore.EditConfiguration
+    @_spi(STP) public init(type: StripeUICore.TextFieldElement.NameConfiguration.NameType = .full, defaultValue: Swift.String?, label: Swift.String? = nil, isOptional: Swift.Bool = false, editConfiguration: StripeUICore.EditConfiguration = .editable)
+    @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+  }
+  @_spi(STP) public static func makeName(label: Swift.String? = nil, defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance = .default) -> StripeUICore.TextFieldElement
+  @_spi(STP) public struct EmailConfiguration : StripeUICore.TextFieldElementConfiguration {
+    @_spi(STP) public let label: Swift.String
+    @_spi(STP) public let defaultValue: Swift.String?
+    @_spi(STP) public let isOptional: Swift.Bool
+    @_spi(STP) public let editConfiguration: StripeUICore.EditConfiguration
+    @_spi(STP) public let disallowedCharacters: Foundation.CharacterSet
+    @_spi(STP) public init(defaultValue: Swift.String? = nil, isOptional: Swift.Bool = false, editConfiguration: StripeUICore.EditConfiguration = .editable)
+    @_spi(STP) public func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+    @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+  }
+  @_spi(STP) public static func makeEmail(defaultValue: Swift.String?, isOptional: Swift.Bool = false, theme: StripeUICore.ElementsAppearance = .default) -> StripeUICore.TextFieldElement
+  @_spi(STP) public struct VPAConfiguration : StripeUICore.TextFieldElementConfiguration {
+    @_spi(STP) public let label: Swift.String
+    @_spi(STP) public let disallowedCharacters: Foundation.CharacterSet
+    @_spi(STP) public func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+    @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+  }
+  @_spi(STP) public static func makeVPA(theme: StripeUICore.ElementsAppearance = .default) -> StripeUICore.TextFieldElement
+  @_spi(STP) public struct BlikCodeConfiguration : StripeUICore.TextFieldElementConfiguration {
+    @_spi(STP) public let label: Swift.String
+    @_spi(STP) public let disallowedCharacters: Foundation.CharacterSet
+    @_spi(STP) public let defaultValue: Swift.String?
+    @_spi(STP) public func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+    @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+    @_spi(STP) public func maxLength(for text: Swift.String) -> Swift.Int
+  }
+  @_spi(STP) public static func makeBlikCode(defaultValue: Swift.String?, theme: StripeUICore.ElementsAppearance) -> StripeUICore.TextFieldElement
+  @_spi(STP) public struct KonbiniPhoneNumberConfiguration : StripeUICore.TextFieldElementConfiguration {
+    @_spi(STP) public let label: Swift.String
+    @_spi(STP) public let disallowedCharacters: Foundation.CharacterSet
+    @_spi(STP) public let isOptional: Swift.Bool
+    @_spi(STP) public func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+    @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+    @_spi(STP) public func maxLength(for text: Swift.String) -> Swift.Int
+  }
+  @_spi(STP) public static func makeKonbini(theme: StripeUICore.ElementsAppearance) -> StripeUICore.TextFieldElement
+  @_spi(STP) public struct PhoneNumberConfiguration : StripeUICore.TextFieldElementConfiguration {
+    @_spi(STP) public let label: Swift.String
+    @_spi(STP) public let countryCodeProvider: () -> Swift.String
+    @_spi(STP) public let defaultValue: Swift.String?
+    @_spi(STP) public let isOptional: Swift.Bool
+    @_spi(STP) public init(defaultValue: Swift.String? = nil, isOptional: Swift.Bool = false, countryCodeProvider: @escaping () -> Swift.String)
+    @_spi(STP) public func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+    @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+    @_spi(STP) public var disallowedCharacters: Foundation.CharacterSet {
+      @_spi(STP) get
+    }
+    @_spi(STP) public func makeDisplayText(for text: Swift.String) -> Foundation.NSAttributedString
+  }
+}
+@_spi(STP) public class FormElement : StripeUICore.ContainerElement {
+  @_spi(STP) weak public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) final public let elements: [any StripeUICore.Element]
+  @_spi(STP) final public let customSpacing: [(any StripeUICore.Element, CoreFoundation.CGFloat)]
+  @_spi(STP) final public let style: StripeUICore.FormElement.Style
+  @_spi(STP) final public let theme: StripeUICore.ElementsAppearance
+  @_spi(STP) public enum Style {
+    @_spi(STP) case plain
+    @_spi(STP) case bordered
+    @_spi(STP) public static func == (a: StripeUICore.FormElement.Style, b: StripeUICore.FormElement.Style) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) public struct ViewModel {
+    @_spi(STP) public init(elements: [UIKit.UIView], bordered: Swift.Bool, theme: StripeUICore.ElementsAppearance = .default, customSpacing: [(UIKit.UIView, CoreFoundation.CGFloat)] = [])
+  }
+  @_spi(STP) convenience public init(elements: [(any StripeUICore.Element)?], theme: StripeUICore.ElementsAppearance = .default, customSpacing: [(any StripeUICore.Element, CoreFoundation.CGFloat)] = [])
+  @_spi(STP) public init(elements: [(any StripeUICore.Element)?], style: StripeUICore.FormElement.Style, theme: StripeUICore.ElementsAppearance = .default, customSpacing: [(any StripeUICore.Element, CoreFoundation.CGFloat)] = [])
+  @_spi(STP) public func toggleElements(_ elements: [any StripeUICore.Element], hidden: Swift.Bool, animated: Swift.Bool)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.FormElement : StripeUICore.Element {
+  @_spi(STP) public var view: UIKit.UIView {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) @_hasMissingDesignatedInitializers @objc(STP_Internal_FormView) @_Concurrency.MainActor(unsafe) public class FormView : UIKit.UIView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(viewModel: StripeUICore.FormElement.ViewModel)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) public class PhoneNumberElement : StripeUICore.ContainerElement {
+  @_spi(STP) public var elements: [any StripeUICore.Element] {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) public var lastUpdatedElement: (any StripeUICore.Element)? {
+    get
+  }
+  @_spi(STP) public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) public var view: UIKit.UIView {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) public var phoneNumber: StripeUICore.PhoneNumber? {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var hasBeenModified: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var selectedCountryCode: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public init(allowedCountryCodes: [Swift.String]? = nil, defaultCountryCode: Swift.String? = nil, defaultPhoneNumber: Swift.String? = nil, isOptional: Swift.Bool = false, infoView: UIKit.UIView? = nil, locale: Foundation.Locale = .current, theme: StripeUICore.ElementsAppearance = .default)
+  @_spi(STP) public func setSelectedCountryCode(_ countryCode: Swift.String, shouldUpdateDefaultNumber: Swift.Bool = false)
+  @_spi(STP) public func clearPhoneNumber()
+  @_spi(STP) final public let collectsUserInput: Swift.Bool
+  @_spi(STP) public func beginEditing() -> Swift.Bool
+  @_spi(STP) public func didUpdate(element: any StripeUICore.Element)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) public enum SelectionBehavior {
+  @_spi(STP) case `default`
+  @_spi(STP) case highlightBorder(configuration: StripeUICore.HighlightBorderConfiguration)
+}
+@_spi(STP) public struct HighlightBorderConfiguration {
+  @_spi(STP) public let width: CoreFoundation.CGFloat
+  @_spi(STP) public let color: UIKit.UIColor
+  @_spi(STP) public let animator: UIKit.UIViewPropertyAnimator
+  @_spi(STP) public init(width: CoreFoundation.CGFloat, color: UIKit.UIColor, animator: UIKit.UIViewPropertyAnimator)
+}
+@_spi(STP) extension StripeUICore.SectionElement {
+  @_spi(STP) final public class MultiElementRow : StripeUICore.ContainerElement {
+    @_spi(STP) weak final public var delegate: (any StripeUICore.ElementDelegate)?
+    @_spi(STP) final public var view: UIKit.UIView {
+      @_spi(STP) get
+      @_spi(STP) set
+    }
+    @_spi(STP) final public let elements: [any StripeUICore.Element]
+    @_spi(STP) final public let theme: StripeUICore.ElementsAppearance
+    @_spi(STP) public init(_ elements: [any StripeUICore.Element], theme: StripeUICore.ElementsAppearance = .default)
+    @_spi(STP) @objc deinit
+  }
+}
+@_spi(STP) final public class SectionElement : StripeUICore.ContainerElement {
+  @_spi(STP) weak final public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) final public var elements: [any StripeUICore.Element] {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) public init(title: Swift.String? = nil, elements: [any StripeUICore.Element], selectionBehavior: StripeUICore.SelectionBehavior = .default, theme: StripeUICore.ElementsAppearance = .default)
+  @_spi(STP) convenience public init(_ element: any StripeUICore.Element, theme: StripeUICore.ElementsAppearance = .default)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.SectionElement : StripeUICore.Element {
+  @_spi(STP) final public var view: UIKit.UIView {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) extension StripeUICore.SectionElement : StripeUICore.ElementDelegate {
+  @_spi(STP) final public func didUpdate(element: any StripeUICore.Element)
+}
+@_spi(STP) extension StripeUICore.SectionElement {
+  @_spi(STP) final public class HiddenElement : StripeUICore.ContainerElement {
+    @_spi(STP) weak final public var delegate: (any StripeUICore.ElementDelegate)?
+    @_spi(STP) final public var view: UIKit.UIView {
+      @_spi(STP) get
+      @_spi(STP) set
+    }
+    @_spi(STP) final public let elements: [any StripeUICore.Element]
+    @_spi(STP) public init?(_ element: (any StripeUICore.Element)?)
+    @_spi(STP) @objc deinit
+  }
+}
+@_spi(STP) extension StripeUICore.SectionElement {
+  @_spi(STP) final public var debugDescription: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public class StaticElement : StripeUICore.Element {
+  @_spi(STP) final public let collectsUserInput: Swift.Bool
+  @_spi(STP) weak public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) final public let view: UIKit.UIView
+  @_spi(STP) public var isHidden: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) public init(view: UIKit.UIView)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.TextFieldElement {
+  @_spi(STP) @frozen public enum ValidationState {
+    @_spi(STP) case valid
+    @_spi(STP) case invalid(_: any StripeUICore.TextFieldValidationError)
+  }
+  @_spi(STP) @frozen public enum Error : StripeUICore.TextFieldValidationError, Swift.Equatable {
+    @_spi(STP) case empty
+    @_spi(STP) case incomplete(localizedDescription: Swift.String)
+    @_spi(STP) case invalid(localizedDescription: Swift.String)
+    @_spi(STP) public func shouldDisplay(isUserEditing: Swift.Bool) -> Swift.Bool
+    @_spi(STP) public var localizedDescription: Swift.String {
+      @_spi(STP) get
+    }
+    @_spi(STP) public static func == (a: StripeUICore.TextFieldElement.Error, b: StripeUICore.TextFieldElement.Error) -> Swift.Bool
+  }
+}
+@_spi(STP) public protocol TextFieldValidationError : StripeUICore.ElementValidationError {
+  @_spi(STP) func shouldDisplay(isUserEditing: Swift.Bool) -> Swift.Bool
+  @_spi(STP) var localizedDescription: Swift.String { get }
+}
+@_spi(STP) final public class TextFieldElement {
+  @_spi(STP) weak final public var delegate: (any StripeUICore.ElementDelegate)?
+  @_spi(STP) final public var text: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var isEditing: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var validationState: StripeUICore.ElementValidationState {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var inputAccessoryView: UIKit.UIView? {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) public struct KeyboardProperties {
+    @_spi(STP) public init(type: UIKit.UIKeyboardType, textContentType: UIKit.UITextContentType?, autocapitalization: UIKit.UITextAutocapitalizationType)
+  }
+  @_spi(STP) required public init(configuration: any StripeUICore.TextFieldElementConfiguration, theme: StripeUICore.ElementsAppearance = .default)
+  @_spi(STP) final public func setText(_ text: Swift.String)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.TextFieldElement : StripeUICore.Element {
+  @_spi(STP) final public var collectsUserInput: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public var view: UIKit.UIView {
+    @_spi(STP) get
+  }
+  @_spi(STP) @discardableResult
+  final public func beginEditing() -> Swift.Bool
+  @_spi(STP) @discardableResult
+  final public func endEditing(_ force: Swift.Bool = false, continueToNextField: Swift.Bool = true) -> Swift.Bool
+  @_spi(STP) final public var subLabelText: Swift.String? {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) extension StripeUICore.TextFieldElement {
+  @_spi(STP) final public var debugDescription: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public protocol TextFieldElementConfiguration {
+  @_spi(STP) var label: Swift.String { get }
+  @_spi(STP) var accessibilityLabel: Swift.String { get }
+  @_spi(STP) var shouldShowClearButton: Swift.Bool { get }
+  @_spi(STP) var disallowedCharacters: Foundation.CharacterSet { get }
+  @_spi(STP) var isOptional: Swift.Bool { get }
+  @_spi(STP) var defaultValue: Swift.String? { get }
+  @_spi(STP) var editConfiguration: StripeUICore.EditConfiguration { get }
+  @_spi(STP) func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+  @_spi(STP) func subLabel(text: Swift.String) -> Swift.String?
+  @_spi(STP) func makeDisplayText(for text: Swift.String) -> Foundation.NSAttributedString
+  @_spi(STP) func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+  @_spi(STP) func maxLength(for text: Swift.String) -> Swift.Int
+  @_spi(STP) func accessoryView(for text: Swift.String, theme: StripeUICore.ElementsAppearance) -> UIKit.UIView?
+  @_spi(STP) func makeElement(theme: StripeUICore.ElementsAppearance) -> StripeUICore.TextFieldElement
+}
+@_spi(STP) extension StripeUICore.TextFieldElementConfiguration {
+  @_spi(STP) public var accessibilityLabel: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var disallowedCharacters: Foundation.CharacterSet {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var isOptional: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var defaultValue: Swift.String? {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var shouldShowClearButton: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var editConfiguration: StripeUICore.EditConfiguration {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func makeDisplayText(for text: Swift.String) -> Foundation.NSAttributedString
+  @_spi(STP) public func keyboardProperties(for text: Swift.String) -> StripeUICore.TextFieldElement.KeyboardProperties
+  @_spi(STP) public func validate(text: Swift.String, isOptional: Swift.Bool) -> StripeUICore.TextFieldElement.ValidationState
+  @_spi(STP) public func subLabel(text: Swift.String) -> Swift.String?
+  @_spi(STP) public func maxLength(for text: Swift.String) -> Swift.Int
+  @_spi(STP) public func accessoryView(for text: Swift.String, theme: StripeUICore.ElementsAppearance) -> UIKit.UIView?
+  @_spi(STP) public func makeElement(theme: StripeUICore.ElementsAppearance) -> StripeUICore.TextFieldElement
+}
+@_spi(STP) public enum EditConfiguration {
+  @_spi(STP) case editable
+  @_spi(STP) case readOnly
+  @_spi(STP) case readOnlyWithoutDisabledAppearance
+  @_spi(STP) public var isEditable: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static func == (a: StripeUICore.EditConfiguration, b: StripeUICore.EditConfiguration) -> Swift.Bool
+  @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(STP) public var hashValue: Swift.Int {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) final public class OneTimeCodeTextFieldController {
+  @_spi(STP) public init()
+  @_spi(STP) final public func performInvalidCodeAnimation()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) public struct OneTimeCodeTextFieldRepresentable : SwiftUI.UIViewRepresentable {
+  @_spi(STP) public init(text: SwiftUI.Binding<Swift.String>, configuration: StripeUICore.OneTimeCodeTextField.Configuration = OneTimeCodeTextField.Configuration(), controller: StripeUICore.OneTimeCodeTextFieldController?, theme: StripeUICore.ElementsAppearance = .default, isEnabled: Swift.Bool = true, onComplete: ((Swift.String) -> Swift.Void)? = nil)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func makeUIView(context: StripeUICore.OneTimeCodeTextFieldRepresentable.Context) -> StripeUICore.OneTimeCodeTextField
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: StripeUICore.OneTimeCodeTextField, context: StripeUICore.OneTimeCodeTextFieldRepresentable.Context)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func makeCoordinator() -> StripeUICore.OneTimeCodeTextFieldRepresentable.Coordinator
+  @_spi(STP) @objc @_hasMissingDesignatedInitializers public class Coordinator : ObjectiveC.NSObject {
+    @_spi(STP) @objc deinit
+  }
+  @_spi(STP) public typealias Body = Swift.Never
+  @_spi(STP) public typealias UIViewType = StripeUICore.OneTimeCodeTextField
+}
+@_spi(STP) public protocol TextOrDropdownElement : StripeUICore.Element {
+  @_spi(STP) var rawData: Swift.String { get }
+  @_spi(STP) func setRawData(_ rawData: Swift.String)
+}
+@_spi(STP) extension StripeUICore.TextFieldElement : StripeUICore.TextOrDropdownElement {
+  @_spi(STP) final public var rawData: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public func setRawData(_ rawData: Swift.String)
+}
+@_spi(STP) extension StripeUICore.DropdownFieldElement : StripeUICore.TextOrDropdownElement {
+  @_spi(STP) final public var rawData: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) final public func setRawData(_ rawData: Swift.String)
+}
+@_spi(STP) public func sendEventToSubviews(_ event: StripeUICore.STPEvent, from view: UIKit.UIView)
+@_spi(STP) @frozen public enum STPEvent {
+  @_spi(STP) case shouldEnableUserInteraction
+  @_spi(STP) case shouldDisableUserInteraction
+  @_spi(STP) case viewDidAppear
+  @_spi(STP) public static func == (a: StripeUICore.STPEvent, b: StripeUICore.STPEvent) -> Swift.Bool
+  @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(STP) public var hashValue: Swift.Int {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public protocol EventHandler {
+  @_spi(STP) func handleEvent(_ event: StripeUICore.STPEvent)
+}
+@_spi(STP) @available(*, deprecated, renamed: "UIColor")
+public typealias CompatibleColor = UIKit.UIColor
+@_spi(STP) public protocol ImageMaker {
+  associatedtype BundleLocator : StripeCore.BundleLocatorProtocol
+}
+@_spi(STP) extension StripeUICore.ImageMaker {
+  @_spi(STP) public static func safeImageNamed(_ imageName: Swift.String, templateIfAvailable: Swift.Bool = false, overrideUserInterfaceStyle: UIKit.UIUserInterfaceStyle? = nil) -> UIKit.UIImage
+}
+@_spi(STP) extension StripeUICore.ImageMaker where Self : Swift.RawRepresentable, Self.RawValue == Swift.String {
+  @_spi(STP) public func makeImage(template: Swift.Bool = false, overrideUserInterfaceStyle: UIKit.UIUserInterfaceStyle? = nil) -> UIKit.UIImage
+}
+@_spi(STP) public enum InputFormColors {
+  @_spi(STP) public static var textColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var disabledTextColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var errorColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var outlineColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var backgroundColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var disabledBackgroundColor: UIKit.UIColor {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) public protocol RegionCodeProvider {
+  @_spi(STP) var regionCode: Swift.String { get }
+}
+@_spi(STP) @_inheritsConvenienceInitializers @objc(STP_Internal_StackViewWithSeparator) @_Concurrency.MainActor(unsafe) public class StackViewWithSeparator : UIKit.UIStackView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public static let borderlessInset: CoreFoundation.CGFloat
+  @_spi(STP) public enum SeparatoryStyle {
+    @_spi(STP) case full
+    @_spi(STP) case partial
+    @_spi(STP) public static func == (a: StripeUICore.StackViewWithSeparator.SeparatoryStyle, b: StripeUICore.StackViewWithSeparator.SeparatoryStyle) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var separatorStyle: StripeUICore.StackViewWithSeparator.SeparatoryStyle {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var separatorColor: UIKit.UIColor {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var spacing: CoreFoundation.CGFloat {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var drawBorder: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var borderCornerRadius: CoreFoundation.CGFloat {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var borderColor: UIKit.UIColor {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public var isUserInteractionEnabled: Swift.Bool {
+    @_spi(STP) @objc get
+    @_spi(STP) @objc set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var hideShadow: Swift.Bool {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var customBackgroundColor: UIKit.UIColor? {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public var customBackgroundDisabledColor: UIKit.UIColor? {
+    @_spi(STP) get
+    @_spi(STP) set
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder: Foundation.NSCoder)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension Swift.String {
+  @_spi(STP) public static func countryFlagEmoji(for countryCode: Swift.String) -> Swift.String?
+}
+@_spi(STP) extension Swift.String.Localized {
+  @_spi(STP) public static var address: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var address_line1: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var address_line2: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var country_or_region: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var country: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var email: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var name: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var full_name: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var given_name: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var family_name: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var nameOnAccount: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var company: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var invalid_email: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var billing_same_as_shipping: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var phoneNumber: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var incomplete_phone_number: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var invalid_phone_number: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var optional_field: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var other: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var city: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var district: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var suburb: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var post_town: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var suburb_or_city: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var eircode: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var postal_pin: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var postal_code: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var zip: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_zip_is_incomplete: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var your_postal_code_is_incomplete: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var area: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var county: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var department: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var do_si: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var emirate: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var island: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var oblast: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var parish: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var prefecture: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var province: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var state: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var accountNumber: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var incompleteBSBEntered: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var invalidSortCodeEntered: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var incompleteAccountNumber: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var bank_account_xxxx: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var removeBankAccount: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var error: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var cancel: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var closeFormTitle: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var paymentInfoWontBeSaved: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var ok: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var `continue`: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var remove: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var search: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var useRotorToAccessLinks: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var edit: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var upi_id: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var invalid_upi_id: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var blik_code: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var incomplete_blik_code: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var invalid_blik_code: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var card_brand_dropdown_placeholder: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var card_brand: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var remove_card: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public static var brand_not_accepted: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) extension Swift.String : StripeUICore.RegionCodeProvider {
+  @_spi(STP) public var regionCode: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) @_hasMissingDesignatedInitializers final public class StripeUICoreBundleLocator : StripeCore.BundleLocatorProtocol {
+  @_spi(STP) public static let internalClass: Swift.AnyClass
+  @_spi(STP) public static let bundleName: Swift.String
+  @_spi(STP) public static let resourcesBundle: Foundation.Bundle
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) public enum Image : Swift.String, StripeUICore.ImageMaker, Swift.CaseIterable {
+  @_spi(STP) public typealias BundleLocator = StripeUICore.StripeUICoreBundleLocator
+  @_spi(STP) case icon_chevron_down
+  @_spi(STP) case icon_clear
+  @_spi(STP) case brand_stripe
+  @_spi(STP) case icon_error
+  @_spi(STP) public init?(rawValue: Swift.String)
+  @_spi(STP) public typealias AllCases = [StripeUICore.Image]
+  @_spi(STP) public typealias RawValue = Swift.String
+  @_spi(STP) public static var allCases: [StripeUICore.Image] {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var rawValue: Swift.String {
+    @_spi(STP) get
+  }
+}
+@_spi(STP) extension StripeUICore.Image {
+  @_spi(STP) public static func brandImage(named name: Swift.String) -> StripeUICore.Image?
+}
+@_spi(STP) public protocol BankRoutingNumber {
+  @_spi(STP) var number: Swift.String { get }
+  @_spi(STP) var pattern: Swift.String { get }
+}
+@_spi(STP) extension StripeUICore.BankRoutingNumber {
+  @_spi(STP) public var isComplete: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public func formattedNumber() -> Swift.String
+  @_spi(STP) public func bsbNumberText() -> Swift.String
+}
+@_spi(STP) public struct BSBNumber : StripeUICore.BankRoutingNumber {
+  @_spi(STP) public var number: Swift.String
+  @_spi(STP) public init(number: Swift.String)
+  @_spi(STP) public let pattern: Swift.String
+}
+@_spi(STP) public struct SortCode : StripeUICore.BankRoutingNumber {
+  @_spi(STP) public var number: Swift.String
+  @_spi(STP) public init(number: Swift.String)
+  @_spi(STP) public let pattern: Swift.String
+}
+@_spi(STP) public struct PhoneNumber {
+  @_spi(STP) public enum Format {
+    @_spi(STP) case e164
+    @_spi(STP) case national
+    @_spi(STP) case international
+    @_spi(STP) public static func == (a: StripeUICore.PhoneNumber.Format, b: StripeUICore.PhoneNumber.Format) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) public func string(as format: StripeUICore.PhoneNumber.Format) -> Swift.String
+  @_spi(STP) public var countryCode: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var prefix: Swift.String {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var isComplete: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public var isEmpty: Swift.Bool {
+    @_spi(STP) get
+  }
+  @_spi(STP) public let number: Swift.String
+  @_spi(STP) public init?(number: Swift.String, countryCode: Swift.String?)
+  @_spi(STP) public static func fromE164(_ number: Swift.String, locale: Foundation.Locale = .current) -> StripeUICore.PhoneNumber?
+}
+@_spi(STP) extension StripeUICore.PhoneNumber {
+  @_spi(STP) public struct Metadata : StripeUICore.RegionCodeProvider {
+    @_spi(STP) public static func metadata(for countryCode: Swift.String) -> StripeUICore.PhoneNumber.Metadata?
+    @_spi(STP) public let prefix: Swift.String
+    @_spi(STP) public let regionCode: Swift.String
+    @_spi(STP) public var sampleFilledPattern: Swift.String {
+      @_spi(STP) get
+    }
+    @_spi(STP) public static let allMetadata: [StripeUICore.PhoneNumber.Metadata]
+  }
+}
+@_spi(STP) extension StripeUICore.PhoneNumber : Swift.Equatable {
+  @_spi(STP) public static func == (lhs: StripeUICore.PhoneNumber, rhs: StripeUICore.PhoneNumber) -> Swift.Bool
+}
+@_spi(STP) @_hasMissingDesignatedInitializers public class STPBlikCodeValidator {
+  @_spi(STP) public class func stringIsValidBlikCode(_ string: Swift.String?) -> Swift.Bool
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers public class STPEmailAddressValidator : ObjectiveC.NSObject {
+  @_spi(STP) public class func stringIsValidPartialEmailAddress(_ string: Swift.String?) -> Swift.Bool
+  @_spi(STP) public class func stringIsValidEmailAddress(_ string: Swift.String?) -> Swift.Bool
+  @_spi(STP) @objc override dynamic public init()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc @_inheritsConvenienceInitializers public class STPVPANumberValidator : ObjectiveC.NSObject {
+  @_spi(STP) public class func stringIsValidPartialVPANumber(_ string: Swift.String?) -> Swift.Bool
+  @_spi(STP) public class func stringIsValidVPANumber(_ string: Swift.String?) -> Swift.Bool
+  @_spi(STP) @objc override dynamic public init()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) public protocol DoneButtonToolbarDelegate : AnyObject {
+  @_spi(STP) func didTapDone(_ toolbar: StripeUICore.DoneButtonToolbar)
+  @_spi(STP) func didTapCancel(_ toolbar: StripeUICore.DoneButtonToolbar)
+}
+@_spi(STP) extension StripeUICore.DoneButtonToolbarDelegate {
+  @_spi(STP) public func didTapCancel(_ toolbar: StripeUICore.DoneButtonToolbar)
+}
+@_spi(STP) @_hasMissingDesignatedInitializers @objc(STP_Internal_DoneButtonToolbar) @_Concurrency.MainActor(unsafe) final public class DoneButtonToolbar : UIKit.UIToolbar {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) weak final public var doneButtonToolbarDelegate: (any StripeUICore.DoneButtonToolbarDelegate)?
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(delegate: (any StripeUICore.DoneButtonToolbarDelegate)?, showCancelButton: Swift.Bool = false, theme: StripeUICore.ElementsAppearance = .default)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @_hasMissingDesignatedInitializers @objc(STP_Internal_DynamicHeightContainerView) @_Concurrency.MainActor(unsafe) public class DynamicHeightContainerView : UIKit.UIView {
+  @_spi(STP) @frozen public enum PinnedDirection {
+    @_spi(STP) case top, bottom
+    @_spi(STP) public static func == (a: StripeUICore.DynamicHeightContainerView.PinnedDirection, b: StripeUICore.DynamicHeightContainerView.PinnedDirection) -> Swift.Bool
+    @_spi(STP) public func hash(into hasher: inout Swift.Hasher)
+    @_spi(STP) public var hashValue: Swift.Int {
+      @_spi(STP) get
+    }
+  }
+  @_spi(STP) @_Concurrency.MainActor(unsafe) required public init(pinnedDirection: StripeUICore.DynamicHeightContainerView.PinnedDirection = .bottom)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func addPinnedSubview(_ view: UIKit.UIView)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public func updateHeight()
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) @objc(STP_Internal_DynamicImageView) @_Concurrency.MainActor(unsafe) public class DynamicImageView : UIKit.UIImageView {
+  @_spi(STP) @_Concurrency.MainActor(unsafe) public init(dynamicImage: UIKit.UIImage? = nil, pairedColor: UIKit.UIColor)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_spi(STP) @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_spi(STP) @objc deinit
+}
+@_spi(STP) extension StripeUICore.ActivityIndicator.Size : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.ActivityIndicator.Size : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.Button.IconPosition : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.Button.IconPosition : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.ElementValidationState : Swift.Sendable {}
+@_spi(STP) extension StripeUICore.ElementsAppearance.IconStyle : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.ElementsAppearance.IconStyle : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.ElementsAppearance.IconStyle : Swift.Sendable {}
+@_spi(STP) extension StripeUICore.IDNumberTextFieldConfiguration.IDNumberType : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.IDNumberTextFieldConfiguration.IDNumberType : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.TextFieldElement.NameConfiguration.NameType : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.TextFieldElement.NameConfiguration.NameType : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.TextFieldElement.NameConfiguration.NameType : Swift.Sendable {}
+@_spi(STP) extension StripeUICore.FormElement.Style : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.FormElement.Style : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.TextFieldElement.ValidationState : Swift.Sendable {}
+@_spi(STP) extension StripeUICore.EditConfiguration : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.EditConfiguration : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.STPEvent : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.STPEvent : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.STPEvent : Swift.Sendable {}
+@_spi(STP) extension StripeUICore.StackViewWithSeparator.SeparatoryStyle : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.StackViewWithSeparator.SeparatoryStyle : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.Image : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.Image : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.Image : Swift.RawRepresentable {}
+@_spi(STP) extension StripeUICore.PhoneNumber.Format : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.PhoneNumber.Format : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.DynamicHeightContainerView.PinnedDirection : Swift.Equatable {}
+@_spi(STP) extension StripeUICore.DynamicHeightContainerView.PinnedDirection : Swift.Hashable {}
+@_spi(STP) extension StripeUICore.DynamicHeightContainerView.PinnedDirection : Swift.Sendable {}

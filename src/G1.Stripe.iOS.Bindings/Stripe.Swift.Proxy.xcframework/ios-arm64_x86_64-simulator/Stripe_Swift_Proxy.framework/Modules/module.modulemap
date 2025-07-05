@@ -1,0 +1,4 @@
+framework module Stripe_Swift_Proxy {
+  header "Stripe_Swift_Proxy-Swift.h"
+  requires objc
+}
