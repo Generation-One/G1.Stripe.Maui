@@ -16,7 +16,7 @@ jobs:
     - name: install dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9'
+        dotnet-version: '9.0.x'
         dotnet-quality: 'ga'
         
     - name: Workload restore
