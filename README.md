@@ -82,12 +82,12 @@ If it doesn’t fit your needs:
 
 ### Register Yourself
 
-Register \`AndroidPaymentSheet\` and \`iOSPaymentSheet\`. Make sure you call  
-\`AndroidPaymentSheet.CaptureActivity(..)\` — Stripe requires an activity that is not yet started.
+Register `AndroidPaymentSheet` and `iOSPaymentSheet`. Make sure you call  
+`AndroidPaymentSheet.CaptureActivity(..)` — Stripe requires an activity that is not yet started.
 
 ### Or Use Bindings Directly
 
-Reference \`G1.Stripe.Android.Bindings\` and \`G1.Stripe.iOS.Bindings\` and consume the API from there.
+Reference `G1.Stripe.Android.Bindings` and `G1.Stripe.iOS.Bindings` and consume the API from there.
 
 #### Android
 
@@ -95,4 +95,4 @@ Android provides almost all APIs from Stripe.
 
 #### iOS
 
-For iOS, we have a very small set of APIs since Stripe doesn’t expose them via Objective-C. We need to wrap the necessary methods and then expose them to enable interop. I need help to expose more APIs. Details here: https://github.com/stripe/stripe-ios/issues/3377
+For iOS, we have a very small set of APIs since Stripe doesn’t expose them via Objective-C (`-objc`). We need to wrap the necessary methods and then expose them to enable interop. I need help to expose more APIs. Details here: https://github.com/stripe/stripe-ios/issues/3377
