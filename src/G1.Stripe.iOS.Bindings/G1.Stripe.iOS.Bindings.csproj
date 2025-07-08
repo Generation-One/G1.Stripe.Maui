@@ -6,6 +6,8 @@
 		<IsTrimmable>true</IsTrimmable>
 		<IsBindingProject>true</IsBindingProject>
 		<PackageTags>artifact_version=24.16.1</PackageTags>
+		<BundleOriginalResources>true</BundleOriginalResources>
+		
     <!--
       Enable trim analyzers for class libraries.
       To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming

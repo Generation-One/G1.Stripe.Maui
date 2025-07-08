@@ -1,0 +1,27 @@
+<Project>
+	<PropertyGroup Condition="'$(MSBuildProjectExtension)' != '.dcproj'">
+		<LangVersion>preview</LangVersion>
+		<EnablePreviewFeatures>true</EnablePreviewFeatures>
+		<Nullable>enable</Nullable>
+    	<ImplicitUsings>true</ImplicitUsings>
+		<WarningLevel>3</WarningLevel>
+		<DefaultLanguage>en-us</DefaultLanguage>
+	</PropertyGroup>
+
+    <PropertyGroup Label="Macros">
+        <PropertySheetPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</PropertySheetPath>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="$(PropertySheetPath)LICENSE" Pack="true" PackagePath="" />
+        <None Include="$(PropertySheetPath)assets\icon.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+    
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <Authors>Generation One Team</Authors>
+        <PackageIcon>icon.png</PackageIcon>
+        <Copyright>Generation One</Copyright>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    </PropertyGroup>
+</Project>
