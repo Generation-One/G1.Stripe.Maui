@@ -1,4 +1,4 @@
-# Stripe.Maui
+# G1.Stripe.Maui
 
 A .NET MAUI library providing Stripe payment integration for cross-platform mobile applications.
 
