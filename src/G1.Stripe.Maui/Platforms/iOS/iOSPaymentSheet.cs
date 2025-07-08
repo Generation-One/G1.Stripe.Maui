@@ -3,7 +3,7 @@ using Stripe;
 
 namespace G1.Stripe.Maui.Platforms.iOS;
 
-internal class iOSPaymentSheet : IPaymentSheet
+public class iOSPaymentSheet : IPaymentSheet
 {
     public void Initialize(string publishableKey)
     {

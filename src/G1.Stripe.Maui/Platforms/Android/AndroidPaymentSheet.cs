@@ -1,13 +1,12 @@
 ﻿using AndroidX.Activity;
 using Com.Stripe.Android;
 using Com.Stripe.Android.Paymentsheet;
-using G1.Stripe.Maui;
 using AndroidPaymentSheetResult = Com.Stripe.Android.Paymentsheet.PaymentSheetResult;
 using SharedPSResult = G1.Stripe.Maui.PaymentSheetResult;
 
 namespace G1.Stripe.Maui.Platforms.Android;
 
-internal class AndroidPaymentSheet : IPaymentSheet
+public class AndroidPaymentSheet : IPaymentSheet
 {
     internal static void CaptureActivity(ComponentActivity activity)
     {
