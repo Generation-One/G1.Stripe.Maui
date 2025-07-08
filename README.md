@@ -72,7 +72,7 @@ if it doesnt fit you
 ### Register yourself
 Resgister `AndroidPaymentSheet` and `iOSPaymentSheet`. Make sure you call `AndroidPaymentSheet.CaptureActivity(..)` - stripe requered activity which is not STARTED
 
-### Use bindings directly
+### Or use bindings directly
 Reference `G1.Stripe.Android.Bindings` and `G1.Stripe.iOS.Bindings` and consume api from there.
 #### Android
 Androuid provides almost all api from stripe
