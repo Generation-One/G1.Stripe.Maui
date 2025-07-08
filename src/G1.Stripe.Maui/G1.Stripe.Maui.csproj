@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
@@ -17,12 +17,22 @@
 		<ProjectReference Include="..\G1.Stripe.Android.Bindings\G1.Stripe.Android.Bindings.csproj" />
 	</ItemGroup>
 
-	<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
+	<ItemGroup Condition="$(TargetFramework.Contains('-ios')) And '$(BuildingInsideVisualStudio)' == 'true'">
+		<Reference Include="G1.Stripe.iOS.Bindings">
+			<HintPath>..\G1.Stripe.iOS.Bindings\bin\Release\net9.0-ios\G1.Stripe.iOS.Bindings.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('-ios')) And '$(BuildingInsideVisualStudio)' == 'false'">
 		<ProjectReference Include="..\G1.Stripe.iOS.Bindings\G1.Stripe.iOS.Bindings.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
+
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
 	</ItemGroup>
 
 </Project>

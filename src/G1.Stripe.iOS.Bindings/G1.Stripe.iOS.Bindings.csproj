@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0-ios</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>true</ImplicitUsings>
-    <IsBindingProject>true</IsBindingProject>
-	<PackageTags>artifact_version=24.16.1</PackageTags>
+		<TargetFramework>net9.0-ios</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<IsTrimmable>true</IsTrimmable>
+		<IsBindingProject>true</IsBindingProject>
+		<PackageTags>artifact_version=24.16.1</PackageTags>
     <!--
       Enable trim analyzers for class libraries.
       To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
     -->
-    <IsTrimmable>false</IsTrimmable>
 		<RuntimeIdentifiers>
 			ios-arm64;
 			iossimulator-x64;
