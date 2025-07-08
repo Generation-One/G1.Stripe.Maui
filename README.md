@@ -7,6 +7,10 @@
 
 A .NET MAUI library providing Stripe payment integration for cross-platform mobile applications.
 
+## Contribition
+
+Maintaining this on our own isn’t feasible, so we’re turning it into a community-driven project. Right now it provides a minimal, working iOS API, but we need contributors to flesh it out and improve its reliability. We’ve seen many developers struggle with these same issues, so we’re making everything public in hopes that the community can help build a robust, well-documented solution together.
+
 ## Stripe SDK Versions
 
 This library uses the following Stripe SDK versions for each platform:
