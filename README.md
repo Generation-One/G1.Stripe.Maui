@@ -78,4 +78,4 @@ Reference `G1.Stripe.Android.Bindings` and `G1.Stripe.iOS.Bindings` and consume 
 Androuid provides almost all api from stripe
 #### iOS
 For iOS we have really small amount of the api since stripe doesnt expose api via `-objc`.So we need to wrap all api and then expose, to be able to interop. I need help to expose more api. Details here: https://github.com/stripe/stripe-ios/issues/3377
-```
+
