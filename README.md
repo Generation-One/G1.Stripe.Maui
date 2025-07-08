@@ -1,8 +1,9 @@
 # G1.Stripe.Maui
-
-#### G1.Stripe.Maui [![nuget](https://img.shields.io/nuget/v/G1.Stripe.Maui?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Maui) [![downloads](https://img.shields.io/nuget/dt/G1.Stripe.Maui?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Maui)
-#### G1.Stripe.Android.Bindings [![nuget](https://img.shields.io/nuget/v/G1.Stripe.Android.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Android.Bindings) [![downloads](https://img.shields.io/nuget/dt/G1.Stripe.Android.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Android.Bindings)
-#### G1.Stripe.iOS.Bindings [![nuget](https://img.shields.io/nuget/v/G1.Stripe.iOS.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.iOS.Bindings) [![downloads](https://img.shields.io/nuget/dt/G1.Stripe.iOS.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.iOS.Bindings)
+| | |
+|---|---|
+| [G1.Stripe.Maui](https://github.com/Generation-One/G1.Stripe.Maui/tree/master/src/G1.Stripe.Maui) | [![nuget](https://img.shields.io/nuget/v/G1.Stripe.Maui?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Maui) [![downloads](https://img.shields.io/nuget/dt/G1.Stripe.Maui?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Maui) |
+| [G1.Stripe.Android.Bindings](https://github.com/Generation-One/G1.Stripe.Maui/tree/master/src/G1.Stripe.Android.Bindings) | [![nuget](https://img.shields.io/nuget/v/G1.Stripe.Android.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Android.Bindings) [![downloads](https://img.shields.io/nuget/dt/G1.Stripe.Android.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Android.Bindings) |
+| [G1.Stripe.iOS.Bindings](https://github.com/Generation-One/G1.Stripe.Maui/tree/master/src/G1.Stripe.iOS.Bindings) | [![nuget](https://img.shields.io/nuget/v/G1.Stripe.iOS.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.iOS.Bindings) [![downloads](https://img.shields.io/nuget/dt/G1.Stripe.iOS.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.iOS.Bindings) |
 
 A .NET MAUI library providing Stripe payment integration for cross-platform mobile applications.
 
