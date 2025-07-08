@@ -1,7 +1,16 @@
 # G1.Stripe.Maui
-[![nuget](https://img.shields.io/nuget/v/G1.Stripe.Android.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Android.Bindings)
-[![nuget](https://img.shields.io/nuget/v/G1.Stripe.iOS.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.iOS.Bindings)
-[![nuget](https://img.shields.io/nuget/v/G1.Stripe.Maui?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Maui)
+
+### G1.Stripe.Maui [![nuget](https://img.shields.io/nuget/v/G1.Stripe.Maui?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Maui)
+### G1.Stripe.Android.Bindings [![nuget](https://img.shields.io/nuget/v/G1.Stripe.Android.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.Android.Bindings)
+### G1.Stripe.iOS.Bindings [![nuget](https://img.shields.io/nuget/v/G1.Stripe.iOS.Bindings?style=flat-square)](https://www.nuget.org/packages/G1.Stripe.iOS.Bindings)
+
+
+
+
+
+
+
+
 A .NET MAUI library providing Stripe payment integration for cross-platform mobile applications.
 
 ## Stripe SDK Versions
