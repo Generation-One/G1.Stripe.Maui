@@ -12,5 +12,5 @@ if($expectedCount -ne $actualCount)
 }
 
 foreach($name in $filenames){
-    dotnet nuget push ./nupkgs/$name --source https://api.nuget.org/v3/index.json --api-key $apiKey
+    dotnet nuget push ./nupkgs/$name --source https://api.nuget.org/v3/index.json --api-key $apiKey --skip-duplicate
 }
