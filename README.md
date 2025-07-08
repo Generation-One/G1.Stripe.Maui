@@ -6,34 +6,38 @@ A .NET MAUI library providing Stripe payment integration for cross-platform mobi
 
 This library uses the following Stripe SDK versions for each platform:
 
-- **Stripe Android SDK**: `21.18.0`
-
+- **Stripe Android SDK**: `21.18.0`  
 - **Stripe iOS SDK**: `24.16.1`
 
 ## Installation
+
 In your MAUI project’s `MauiProgram.cs`, wire up the Payment Sheet under the `G1.Stripe.Maui` namespace:
-   ```csharp
-   using G1.Stripe.Maui;
 
-   public static MauiApp CreateMauiApp()
-   {
-       var builder = MauiApp.CreateBuilder();
-       builder
-           .UseMauiApp<App>()
-           .UseStripePaymentSheet();
+```csharp
+using G1.Stripe.Maui;
 
-       return builder.Build();
-   }
-   ```
+public static MauiApp CreateMauiApp()
+{
+    var builder = MauiApp.CreateBuilder();
+    builder
+        .UseMauiApp<App>()
+        .UseStripePaymentSheet();
+
+    return builder.Build();
+}
+```
 
 ## Usage
 
 ### 1. Initialize the SDK
+
 Initialize with your Stripe publishable key:
+
 ```csharp
 var paymentSheet = App.Current.Services.GetRequiredService<IPaymentSheet>();
 paymentSheet.Initialize("pk_test_XXXXXXXXXXXXXXXXXXXXXXXX");
 ```
+
 ### 2. Present the Payment Sheet
 
 Build your options and open the sheet:
@@ -49,13 +53,13 @@ var options = new PaymentSheetOptions
 
 var result = await paymentSheet.Open(options);
 ```
-### 3. Handle result
+
+### 3. Handle the Result
 
 ```csharp
-
 switch (result)
 {
-    case PaymentSheetResult.Competed:
+    case PaymentSheetResult.Completed:
         // Payment successful
         break;
     case PaymentSheetResult.Canceled:
@@ -68,14 +72,22 @@ switch (result)
 ```
 
 ## Important
-if it doesnt fit you
-### Register yourself
-Resgister `AndroidPaymentSheet` and `iOSPaymentSheet`. Make sure you call `AndroidPaymentSheet.CaptureActivity(..)` - stripe requered activity which is not STARTED
 
-### Or use bindings directly
-Reference `G1.Stripe.Android.Bindings` and `G1.Stripe.iOS.Bindings` and consume api from there.
+If it doesn’t fit your needs:
+
+### Register Yourself
+
+Register \`AndroidPaymentSheet\` and \`iOSPaymentSheet\`. Make sure you call  
+\`AndroidPaymentSheet.CaptureActivity(..)\` — Stripe requires an activity that is not yet started.
+
+### Or Use Bindings Directly
+
+Reference \`G1.Stripe.Android.Bindings\` and \`G1.Stripe.iOS.Bindings\` and consume the API from there.
+
 #### Android
-Androuid provides almost all api from stripe
-#### iOS
-For iOS we have really small amount of the api since stripe doesnt expose api via `-objc`.So we need to wrap all api and then expose, to be able to interop. I need help to expose more api. Details here: https://github.com/stripe/stripe-ios/issues/3377
 
+Android provides almost all APIs from Stripe.
+
+#### iOS
+
+For iOS, we have a very small set of APIs since Stripe doesn’t expose them via Objective-C. We need to wrap the necessary methods and then expose them to enable interop. I need help to expose more APIs. Details here: https://github.com/stripe/stripe-ios/issues/3377
