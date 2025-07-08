@@ -9,6 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G1.Stripe.iOS.Bindings", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G1.Stripe.Maui", "src\G1.Stripe.Maui\G1.Stripe.Maui.csproj", "{80DE44C8-7A28-2138-F58C-C68297CC418C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionFiles", "_SolutionFiles", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		build-packages.ps1 = build-packages.ps1
+		Directory.Build.props = Directory.Build.props
+		LICENSE = LICENSE
+		publish-nuget.ps1 = publish-nuget.ps1
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

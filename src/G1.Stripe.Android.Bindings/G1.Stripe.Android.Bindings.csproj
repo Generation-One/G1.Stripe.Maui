@@ -9,7 +9,7 @@
 		<!-- Force AndroidX migration -->
 		<AndroidUseAndroidX>true</AndroidUseAndroidX>
 		<AndroidEnableJetifier>true</AndroidEnableJetifier>
-
+		<PackageTags>sdk_version=$(_AndroidSdkVersion)</PackageTags>
 		<NoWarn>XAOBS001;CS0108</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>

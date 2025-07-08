@@ -3,11 +3,14 @@
 		<LangVersion>preview</LangVersion>
 		<EnablePreviewFeatures>true</EnablePreviewFeatures>
 		<Nullable>enable</Nullable>
-    	<ImplicitUsings>true</ImplicitUsings>
+    <ImplicitUsings>true</ImplicitUsings>
 		<WarningLevel>3</WarningLevel>
 		<DefaultLanguage>en-us</DefaultLanguage>
-	</PropertyGroup>
-
+		
+		<_IosSdkVersion>24.16.1</_IosSdkVersion>
+		<_AndroidSdkVersion>21.18.0</_AndroidSdkVersion>
+		
+</PropertyGroup>
     <PropertyGroup Label="Macros">
         <PropertySheetPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</PropertySheetPath>
     </PropertyGroup>
