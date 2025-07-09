@@ -18,6 +18,17 @@ This library uses the following Stripe SDK versions for each platform:
 - **Stripe Android SDK**: `21.18.0`  
 - **Stripe iOS SDK**: `24.16.1`
 
+## Long path error
+You can face issue with long paths, similar to that:
+```
+Could not find a part of the path 'c:\packages\g1.stripe.ios.bindings\0.0.3-beta\lib\net9.0-ios18.0\G1.Stripe.iOS.Bindings.resources\Stripe.Swift.Proxy.xcframework\ios-arm64_x86_64-simulator\Stripe_Swift_Proxy.framework\Modules\Stripe_Swift_Proxy.swiftmodule\arm64-apple-ios-simulator.private.swiftinterface'.
+```
+
+to handle that need to [enable long paths support](https://learn.microsoft.com/en-us/answers/questions/1805411/how-to-enable-long-file-path-names-in-windows-11) and install package via CLI
+```
+dotnet add package G1.Stripe.Maui --prerelease
+```
+
 ## Installation
 
 In your MAUI project’s `MauiProgram.cs`, wire up the Payment Sheet under the `G1.Stripe.Maui` namespace:
