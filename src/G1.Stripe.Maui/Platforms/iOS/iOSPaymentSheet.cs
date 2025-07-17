@@ -36,15 +36,15 @@ public class iOSPaymentSheet : IPaymentSheet
         switch (paymentSheetResult)
         {
             case TSPSPaymentSheetResult.Canceled:
-                tcs.SetResult(PaymentSheetResult.Canceled);
+                tcs.SetResult(new PaymentSheetResult.Canceled());
                 break;
 
             case TSPSPaymentSheetResult.Failed:
-                tcs.SetResult(PaymentSheetResult.Failed);
+                tcs.SetResult(new PaymentSheetResult.Failed(new NotImplementedException("Some internal error occured in stripe payment sheet")));
                 break;
 
             case TSPSPaymentSheetResult.Completed:
-                tcs.SetResult(PaymentSheetResult.Competed);
+                tcs.SetResult(new PaymentSheetResult.Completed());
                 break;
 
             default:

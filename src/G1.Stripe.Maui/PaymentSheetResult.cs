@@ -1,8 +1,8 @@
 ﻿namespace G1.Stripe.Maui;
 
-public enum PaymentSheetResult
+public record PaymentSheetResult
 {
-    Competed,
-    Canceled,
-    Failed
+    public record Canceled : PaymentSheetResult;
+    public record Completed : PaymentSheetResult;
+    public record Failed(Exception error) : PaymentSheetResult;
 }

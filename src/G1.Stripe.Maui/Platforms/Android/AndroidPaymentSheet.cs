@@ -48,15 +48,15 @@ public class AndroidPaymentSheet : IPaymentSheet
             switch (paymentSheetResult)
             {
                 case AndroidPaymentSheetResult.Canceled c:
-                    _tcs?.SetResult(SharedPSResult.Canceled);
+                    _tcs?.SetResult(new PaymentSheetResult.Canceled());
                     break;
 
                 case AndroidPaymentSheetResult.Failed f:
-                    _tcs?.SetResult(SharedPSResult.Failed);
+                    _tcs?.SetResult(new PaymentSheetResult.Failed(f.Error));
                     break;
 
                 case AndroidPaymentSheetResult.Completed completed:
-                    _tcs?.SetResult(SharedPSResult.Competed);
+                    _tcs?.SetResult(new PaymentSheetResult.Completed());
                     break;
                 default:
                     _tcs?.SetException(new ImpossiblePaymentSheetException("Result didnt match one of excpected cases"));
