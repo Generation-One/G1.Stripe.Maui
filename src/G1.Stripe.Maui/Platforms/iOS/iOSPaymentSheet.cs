@@ -10,7 +10,7 @@ public class iOSPaymentSheet : IPaymentSheet
         StripeCore.STPAPIClient.SharedClient.PublishableKey = publishableKey;
     }
 
-    public Task<PaymentSheetResult> Open(PaymentSheetOptions options)
+    public async Task<PaymentSheetResult> Open(PaymentSheetOptions options)
     {
         var configuration = new TSPSConfiguration()
         {
@@ -24,10 +24,11 @@ public class iOSPaymentSheet : IPaymentSheet
 
         var ps = new TSPSPaymentSheet(options.ClientSecret, configuration);
 
+        var controller = await MainThread.InvokeOnMainThreadAsync(Platform.GetCurrentUIViewController);
 
         var tcs = new TaskCompletionSource<PaymentSheetResult>();
-        ps.PresentFrom(Platform.GetCurrentUIViewController(), (res, _) => OnPaymentSheetResult(res, tcs));
-        return tcs.Task;
+        ps.PresentFrom(controller!, (res, _) => OnPaymentSheetResult(res, tcs));
+        return await tcs.Task;
     }
 
     private void OnPaymentSheetResult(TSPSPaymentSheetResult paymentSheetResult, TaskCompletionSource<PaymentSheetResult> tcs)
