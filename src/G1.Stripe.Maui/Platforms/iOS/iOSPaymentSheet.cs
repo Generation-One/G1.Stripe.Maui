@@ -24,10 +24,10 @@ public class iOSPaymentSheet : IPaymentSheet
 
         var ps = new TSPSPaymentSheet(options.ClientSecret, configuration);
 
-        var controller = await MainThread.InvokeOnMainThreadAsync(Platform.GetCurrentUIViewController);
-
         var tcs = new TaskCompletionSource<PaymentSheetResult>();
-        ps.PresentFrom(controller!, (res, _) => OnPaymentSheetResult(res, tcs));
+
+        await MainThread.InvokeOnMainThreadAsync(() => ps.PresentFrom(Platform.GetCurrentUIViewController()!, (res, _) => OnPaymentSheetResult(res, tcs)));
+        
         return await tcs.Task;
     }
 
