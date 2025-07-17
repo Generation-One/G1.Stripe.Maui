@@ -10,20 +10,26 @@ public class AndroidPaymentSheet : IPaymentSheet
 {
     internal static void CaptureActivity(ComponentActivity activity)
     {
+        _capturedActivity = activity;
         _sheet = new PaymentSheet.Builder(new ResultCallback()).Build(activity);
     }
 
-    private static PaymentSheet _sheet;
+    private static ComponentActivity? _capturedActivity;
+
+    private static PaymentSheet? _sheet;
 
     private static TaskCompletionSource<SharedPSResult>? _tcs;
 
     public void Initialize(string publishableKey)
     {
-        PaymentConfiguration.Init(Platform.CurrentActivity, publishableKey);
+        ArgumentNullException.ThrowIfNull(_capturedActivity);
+        PaymentConfiguration.Init(_capturedActivity, publishableKey);
     }
 
     public Task<SharedPSResult> Open(PaymentSheetOptions options)
     {
+        ArgumentNullException.ThrowIfNull(_sheet);
+
         var configurationBuilder = new PaymentSheet.Configuration.Builder(options.MerchantDisplayName) //todo Local One to DI
             .AllowsDelayedPaymentMethods(true); // Optional
 

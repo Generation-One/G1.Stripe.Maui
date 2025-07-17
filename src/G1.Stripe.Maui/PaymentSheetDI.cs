@@ -21,7 +21,7 @@ public static class PaymentSheetDI
             {
                 ab.OnCreate((activity, bundle) =>
                 {
-                    if (activity is ComponentActivity ma)
+                    if (activity is MauiAppCompatActivity ma)
                     {
                         AndroidPaymentSheet.CaptureActivity(ma);
                     }
