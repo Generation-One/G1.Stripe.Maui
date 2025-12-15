@@ -7,8 +7,8 @@
 		<WarningLevel>3</WarningLevel>
 		<DefaultLanguage>en-us</DefaultLanguage>
 
-		<_IosSdkVersion>24.25.0</_IosSdkVersion>
-		<_AndroidSdkVersion>21.29.1</_AndroidSdkVersion>
+		<_IosSdkVersion>25.2.0</_IosSdkVersion>
+		<_AndroidSdkVersion>22.4.0</_AndroidSdkVersion>
 
 		<GenerateRequiresPreviewFeaturesAttribute>false</GenerateRequiresPreviewFeaturesAttribute>
 		<EnablePreviewFeatures>false</EnablePreviewFeatures>

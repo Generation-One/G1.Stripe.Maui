@@ -35,9 +35,6 @@
 	<remove-node path="/api/package[@name='com.stripe.android.model']/class[@name='ConfirmSetupIntentParams']" />
 	<remove-node path="/api/package[@name='com.stripe.android']/interface[@name='StripeIntentResult.Outcome']" />
 
-	<remove-node path="/api/package[@name='com.stripe.android.challenge']/class[@name='PassiveChallengeActivityContract']" />
-	<remove-node path="/api/package[@name='com.stripe.android.challenge.warmer.activity']/class[@name='PassiveChallengeWarmerContract']" />
-
 	<remove-node path="/api/package[@name='com.stripe.android.model']/class[@name='ClientAttributionMetadata']" />
 
 	<remove-node path="/api/package[@name='com.stripe.android.model']/interface[@name='ElementsSessionParams']" />
@@ -54,4 +51,7 @@
 
 	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='fromJson']" name="managedReturn">Java.Lang.Object</attr>
 	<attr path="/api/package[starts-with(@name, 'com.stripe')]/*/method[@name='newBuilder']" name="managedReturn">Java.Lang.Object</attr>
+
+	<attr path="/api/package[@name='com.stripe.android.challenge.passive']/class[@name='PassiveChallengeActivityContract']" name="extends">java.lang.Object</attr>
+	<attr path="/api/package[@name='com.stripe.android.challenge.passive.warmer.activity']/class[@name='PassiveChallengeWarmerContract']" name="extends">java.lang.Object</attr>
 </metadata>
