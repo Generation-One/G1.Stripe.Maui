@@ -15,8 +15,8 @@ Maintaining this on our own isn’t feasible, so we’re turning it into a commu
 
 This library uses the following Stripe SDK versions for each platform:
 
-- **Stripe Android SDK**: `21.29.1`  
-- **Stripe iOS SDK**: `24.25.0`
+- **Stripe Android SDK**: `22.7.0`  
+- **Stripe iOS SDK**: `25.6.0`
 
 ## Long path error
 You can face issue with long paths, similar to that:
