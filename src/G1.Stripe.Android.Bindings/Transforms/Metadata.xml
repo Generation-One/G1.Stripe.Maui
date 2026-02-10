@@ -54,4 +54,7 @@
 
 	<attr path="/api/package[@name='com.stripe.android.challenge.passive']/class[@name='PassiveChallengeActivityContract']" name="extends">java.lang.Object</attr>
 	<attr path="/api/package[@name='com.stripe.android.challenge.passive.warmer.activity']/class[@name='PassiveChallengeWarmerContract']" name="extends">java.lang.Object</attr>
+	
+	<attr path="/api/package[@name='com.stripe.android']/class[@name='DefaultCardFundingFilter']/method[@name='allowedFundingTypesDisplayMessage' and count(parameter)=0]"
+        name="managedReturn">Java.Lang.Integer</attr>
 </metadata>
