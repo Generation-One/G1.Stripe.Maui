@@ -83,7 +83,7 @@ public class TSPSConfiguration: NSObject {
         }
         config.customer = self.customer?.toStripeCustomerConfiguration()
         config.applePay = self.applePay?.toStripeApplePayConfiguration()
-        config.primaryButtonColor = self.primaryButtonColor
+        config.appearance = self.appearance.toStripeAppearance()
         config.returnURL = self.returnURL
         config.allowsDelayedPaymentMethods = self.allowsDelayedPaymentMethods
         self.billingDetailsCollectionConfiguration?.consumeStripeConfiguration(configuration: &config.billingDetailsCollectionConfiguration)

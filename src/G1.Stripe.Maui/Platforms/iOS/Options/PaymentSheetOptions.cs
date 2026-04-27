@@ -82,20 +82,37 @@ partial class PaymentSheetOptions
 
             var iosAppearance = new TSPSAppearance();
 
-            iosAppearance.Colors.Primary = primaryButtonBackground;
+            // Colors.Primary is Stripe's brand/accent color (links, focus borders, checkmarks).
+            // We use the C# Primary brand color here; PrimaryButton.BackgroundColor handles the button.
+            iosAppearance.Colors.Primary = text;
             iosAppearance.Colors.Background = background;
-            iosAppearance.Colors.ComponentText = text;
             iosAppearance.Colors.TextSecondary = secondaryText;
             iosAppearance.Colors.ComponentPlaceholderText = placeholder;
             iosAppearance.Colors.Danger = error;
 
+            var lightComponent = app.Light?.Component?.ToUIColor();
+            var darkComponent = app.Dark?.Component?.ToUIColor();
+            var lightOnComponent = app.Light?.OnComponent?.ToUIColor();
+            var darkOnComponent = app.Dark?.OnComponent?.ToUIColor();
+            if (lightComponent is not null || darkComponent is not null)
+                iosAppearance.Colors.ComponentBackground = isDarkMode ? darkComponent : lightComponent;
+            if (lightOnComponent is not null || darkOnComponent is not null)
+                iosAppearance.Colors.ComponentText = isDarkMode ? darkOnComponent : lightOnComponent;
+
             iosAppearance.PrimaryButton.BackgroundColor = primaryButtonBackground;
             iosAppearance.PrimaryButton.TextColor = primaryButtonText;
-            iosAppearance.PrimaryButton.CornerRadius = cornerRadius;
+            iosAppearance.PrimaryButton.CornerRadius = (app.PrimaryButtonCornerRadius ?? app.CornerRadius ?? 8);
+            iosAppearance.PrimaryButton.Font = primaryButtonFont;
+
+            var lightBorder = app.Light?.PrimaryButtonBorder?.ToUIColor();
+            var darkBorder = app.Dark?.PrimaryButtonBorder?.ToUIColor();
+            var border = isDarkMode ? darkBorder : lightBorder;
+            if (border is not null)
+                iosAppearance.PrimaryButton.BorderColor = border;
 
             iosAppearance.Font.Base = baseFont;
 
-            iosAppearance.CornerRadius = cornerRadius;
+            iosAppearance.CornerRadius = (app.CornerRadius ?? 8);
 
             configuration.Appearance = iosAppearance;
         }
