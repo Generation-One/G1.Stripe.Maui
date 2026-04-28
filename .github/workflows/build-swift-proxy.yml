@@ -1,0 +1,72 @@
+name: Build Stripe Swift Proxy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show project structure
+        run: ls -R src/Stripe.Swift.Proxy
+
+      - name: List project scheme
+        run: |
+          xcodebuild -list -project src/Stripe.Swift.Proxy/Stripe.Swift.Proxy.xcodeproj
+
+      - name: Download Stripe SDK (required dependencies)
+        run: |
+          pwsh ./download-ios-sdk.ps1
+
+      - name: Build iOS device archive
+        run: |
+          xcodebuild archive \
+            -project src/Stripe.Swift.Proxy/Stripe.Swift.Proxy.xcodeproj \
+            -scheme Stripe.Swift.Proxy \
+            -destination "generic/platform=iOS" \
+            -archivePath build/ios_devices \
+            SKIP_INSTALL=NO \
+            BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Build iOS simulator archive
+        run: |
+          xcodebuild archive \
+            -project src/Stripe.Swift.Proxy/Stripe.Swift.Proxy.xcodeproj \
+            -scheme Stripe.Swift.Proxy \
+            -destination "generic/platform=iOS Simulator" \
+            -archivePath build/ios_sim \
+            SKIP_INSTALL=NO \
+            BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Verify archive output
+        run: |
+          ls -R build/ios_devices.xcarchive
+          ls -R build/ios_sim.xcarchive
+
+      - name: Create xcframework
+        run: |
+          xcodebuild -create-xcframework \
+            -framework build/ios_devices.xcarchive/Products/Library/Frameworks/Stripe_Swift_Proxy.framework \
+            -framework build/ios_sim.xcarchive/Products/Library/Frameworks/Stripe_Swift_Proxy.framework \
+            -output Stripe.Swift.Proxy.xcframework
+
+      - name: Zip xcframework
+        run: |
+          ditto -c -k --sequesterRsrc --keepParent \
+            Stripe.Swift.Proxy.xcframework \
+            Stripe.Swift.Proxy.xcframework.zip
+
+      - name: Upload Swift Proxy xcframework
+        uses: actions/upload-artifact@v4
+        with:
+          name: stripe-swift-proxy
+          path: Stripe.Swift.Proxy.xcframework.zip
