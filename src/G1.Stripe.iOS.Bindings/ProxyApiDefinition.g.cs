@@ -1,4 +1,5 @@
 using System;
+using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
 using Stripe;
@@ -89,13 +90,13 @@ interface TSPSAppearance
     [Export("primaryButton", ArgumentSemantic.Strong)]
     TSPSAppearancePrimaryButton PrimaryButton { get; }
 
-    // @property (nonatomic) int cornerRadius;
+    // @property (nonatomic) CGFloat cornerRadius;
     [Export("cornerRadius")]
-    int CornerRadius { get; set; }
+    nfloat CornerRadius { get; set; }
 
-    // @property (nonatomic) int borderWidth;
+    // @property (nonatomic) CGFloat borderWidth;
     [Export("borderWidth")]
-    int BorderWidth { get; set; }
+    nfloat BorderWidth { get; set; }
 
     // @property (readonly, nonatomic, strong) TSPSAppearanceShadow * _Nonnull shadow;
     [Export("shadow", ArgumentSemantic.Strong)]
@@ -163,9 +164,9 @@ interface TSPSAppearanceFont
     [NullAllowed, Export("base", ArgumentSemantic.Strong)]
     UIFont Base { get; set; }
 
-    // @property (nonatomic) int sizeScaleFactor;
+    // @property (nonatomic) CGFloat sizeScaleFactor;
     [Export("sizeScaleFactor")]
-    int SizeScaleFactor { get; set; }
+    nfloat SizeScaleFactor { get; set; }
 }
 
 // @interface TSPSAppearancePrimaryButton
@@ -180,17 +181,17 @@ interface TSPSAppearancePrimaryButton
     [NullAllowed, Export("textColor", ArgumentSemantic.Strong)]
     UIColor TextColor { get; set; }
 
-    // @property (nonatomic) int cornerRadius;
+    // @property (nonatomic) CGFloat cornerRadius;
     [Export("cornerRadius")]
-    int CornerRadius { get; set; }
+    nfloat CornerRadius { get; set; }
 
     // @property (nonatomic, strong) UIColor * _Nullable borderColor;
     [NullAllowed, Export("borderColor", ArgumentSemantic.Strong)]
     UIColor BorderColor { get; set; }
 
-    // @property (nonatomic) int borderWidth;
+    // @property (nonatomic) CGFloat borderWidth;
     [Export("borderWidth")]
-    int BorderWidth { get; set; }
+    nfloat BorderWidth { get; set; }
 
     // @property (nonatomic, strong) UIFont * _Nullable font;
     [NullAllowed, Export("font", ArgumentSemantic.Strong)]
@@ -209,17 +210,17 @@ interface TSPSAppearanceShadow
     [NullAllowed, Export("color", ArgumentSemantic.Strong)]
     UIColor Color { get; set; }
 
-    // @property (nonatomic) int opacity;
+    // @property (nonatomic) CGFloat opacity;
     [Export("opacity")]
-    int Opacity { get; set; }
+    nfloat Opacity { get; set; }
 
-    // @property (nonatomic) int offset;
+    // @property (nonatomic) CGSize offset;
     [Export("offset")]
-    int Offset { get; set; }
+    CGSize Offset { get; set; }
 
-    // @property (nonatomic) int radius;
+    // @property (nonatomic) CGFloat radius;
     [Export("radius")]
-    int Radius { get; set; }
+    nfloat Radius { get; set; }
 }
 
 // @interface TSPSApplePayConfiguration
