@@ -40,6 +40,7 @@ bld/
 [Ll]ogs/
 
 src/G1.Stripe.iOS.Bindings/stripe/*
+src/G1.Stripe.iOS.Bindings/Stripe.Swift.Proxy.xcframework/*
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
