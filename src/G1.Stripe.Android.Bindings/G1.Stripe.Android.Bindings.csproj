@@ -63,9 +63,9 @@
 	<!-- NuGet: Kotlin                                                -->
 	<!-- ============================================================ -->
 	<ItemGroup>
-		<PackageReference Include="Xamarin.Kotlin.StdLib"                          Version="2.3.10.1" />
-		<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk7"                     Version="2.3.10.1" />
-		<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8"                     Version="2.3.10.1" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib"                          Version="2.3.20" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk7"                     Version="2.3.20" />
+		<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8"                     Version="2.3.20" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Core"                Version="1.10.2.3" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Android"             Version="1.10.2.3" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Play.Services"       Version="1.10.2.3" />
@@ -115,14 +115,14 @@
 	<!-- NuGet: AndroidX Compose                                      -->
 	<!-- ============================================================ -->
 	<ItemGroup>
-		<PackageReference Include="Xamarin.AndroidX.Compose.Foundation"				Version="1.10.5" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.Material"				Version="1.10.5" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Foundation"				Version="1.10.6" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Material"				Version="1.10.6" />
 		<PackageReference Include="Xamarin.AndroidX.Compose.Material3"				Version="1.4.0.2" />
 		<PackageReference Include="Xamarin.AndroidX.Compose.Material.Icons.Core"	Version="1.7.8.5" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.Runtime"				Version="1.10.5" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI"						Version="1.10.5" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI.Tooling.Preview"		Version="1.10.5" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI.ViewBinding"			Version="1.10.5" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Runtime"				Version="1.10.6" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI"						Version="1.10.6" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI.Tooling.Preview"		Version="1.10.6" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI.ViewBinding"			Version="1.10.6" />
 	</ItemGroup>
 
 
