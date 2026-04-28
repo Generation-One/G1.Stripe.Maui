@@ -13833,6 +13833,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "ExpressibleByFloatLiteral",
             "printedName": "ExpressibleByFloatLiteral",
             "children": [
@@ -13918,247 +13925,247 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 191,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 202,
       "length": 8,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 220,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 331,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 342,
       "length": 11,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 363,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "BooleanLiteral",
       "offset": 2640,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 5954,
+      "offset": 5959,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 5973,
+      "offset": 5978,
       "length": 4,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 6407,
+      "offset": 6412,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentSheetProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 6426,
+      "offset": 6431,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
       "kind": "FloatLiteral",
       "offset": 679,
       "length": 3,
       "value": "6.0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
       "kind": "FloatLiteral",
       "offset": 727,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
       "kind": "FloatLiteral",
       "offset": 1627,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
       "kind": "FloatLiteral",
       "offset": 4267,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
       "kind": "FloatLiteral",
       "offset": 5362,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/AppearanceProxy.swift",
       "kind": "FloatLiteral",
       "offset": 5455,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 154,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 165,
       "length": 11,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 186,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 201,
       "length": 4,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 215,
       "length": 11,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 236,
       "length": 9,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 255,
       "length": 6,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 271,
       "length": 3,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 284,
       "length": 10,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
       "offset": 304,
       "length": 7,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1444,
+      "offset": 1408,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1455,
+      "offset": 1419,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1469,
+      "offset": 1433,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1489,
+      "offset": 1453,
       "length": 8,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1507,
+      "offset": 1471,
       "length": 3,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1520,
+      "offset": 1484,
       "length": 10,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1540,
+      "offset": 1504,
       "length": 8,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/bym\/Documents\/source\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
+      "filePath": "\/Users\/bcaceiro\/P\/G1.Stripe.Maui\/src\/Stripe.Swift.Proxy\/Sources\/PaymentMethodProxy.swift",
       "kind": "IntegerLiteral",
-      "offset": 1558,
+      "offset": 1522,
       "length": 7,
       "value": "7"
     }

@@ -54,13 +54,15 @@ generate-api-definitions:
 		-scope xcframework/Stripe.Swift.Proxy.xcframework/ios-arm64/Stripe_Swift_Proxy.framework/Headers \
 		xcframework/Stripe.Swift.Proxy.xcframework/ios-arm64/Stripe_Swift_Proxy.framework/Headers/Stripe_Swift_Proxy-Swift.h 
 
+STRIPE_SDK_PATH = $(CURDIR)/G1.Stripe.iOS.Bindings/stripe
+
 g-stripe-core:
 	sharpie bind \
 		-output $(SHARPIE_OUTPUT_PATH) \
 		-namespace StripeSwiftProxy \
 		-sdk iphoneos \
-		-scope /Users/bym/Documents/libs/Stripe/StripeCore.xcframework/ios-arm64/StripeCore.framework/Headers \
-		/Users/bym/Documents/libs/Stripe/StripeCore.xcframework/ios-arm64/StripeCore.framework/Headers/StripeCore-Swift.h 
+		-scope $(STRIPE_SDK_PATH)/StripeCore.xcframework/ios-arm64/StripeCore.framework/Headers \
+		$(STRIPE_SDK_PATH)/StripeCore.xcframework/ios-arm64/StripeCore.framework/Headers/StripeCore-Swift.h
 
 
 

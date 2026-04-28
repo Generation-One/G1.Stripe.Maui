@@ -23,7 +23,7 @@ import StripeCore
         case .SEPA: return .SEPADebit
         case .AUBECSDebit: return .AUBECSDebit
         case .bacsDebit: return .bacsDebit
-        case .sofort: return .sofort
+        case .sofort: return .unknown
         case .UPI: return .UPI
         case .netBanking: return .netBanking
         case .unknown: return .unknown
@@ -38,7 +38,6 @@ import StripeCore
         case .SEPADebit: return .SEPA
         case .AUBECSDebit: return .AUBECSDebit
         case .bacsDebit: return .bacsDebit
-        case .sofort: return .sofort
         case .UPI: return .UPI
         case .netBanking: return .netBanking
         default: return .unknown

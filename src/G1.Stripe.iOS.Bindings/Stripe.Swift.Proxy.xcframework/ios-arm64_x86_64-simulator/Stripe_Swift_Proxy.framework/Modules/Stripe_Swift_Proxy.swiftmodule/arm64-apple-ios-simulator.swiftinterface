@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
 // swift-module-flags: -target arm64-apple-ios18.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name Stripe_Swift_Proxy
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import Foundation
 import PassKit
 import StripeCore
@@ -16,7 +16,9 @@ import _SwiftConcurrencyShims
   case completed = 0
   case canceled
   case failed
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -26,7 +28,9 @@ import _SwiftConcurrencyShims
   case automatic = 0
   case alwaysLight
   case alwaysDark
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -36,7 +40,9 @@ import _SwiftConcurrencyShims
   @objc convenience public init(paymentIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration)
   @objc convenience public init(setupIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration)
   @objc public static func resetCustomer()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func present(from presentingViewController: UIKit.UIViewController, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetResult, Foundation.NSError?) -> Swift.Void)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -71,7 +77,9 @@ import _SwiftConcurrencyShims
     case automatic
     case never
     case full
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -81,7 +89,9 @@ import _SwiftConcurrencyShims
     case automatic
     case never
     case always
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -95,7 +105,9 @@ import _SwiftConcurrencyShims
   @objc final public let buttonType: PassKit.PKPaymentButtonType
   @objc final public let paymentSummaryItems: [PassKit.PKPaymentSummaryItem]?
   @objc final public let customHandlers: Stripe_Swift_Proxy.TSPSApplePayConfigurationHandlers?
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(merchantId: Swift.String, merchantCountryCode: Swift.String, buttonType: PassKit.PKPaymentButtonType = .plain, paymentSummaryItems: [PassKit.PKPaymentSummaryItem]? = nil, customHandlers: Stripe_Swift_Proxy.TSPSApplePayConfigurationHandlers? = nil)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(TSPSApplePayConfigurationHandlers) public class TSPSApplePayConfigurationHandlers : ObjectiveC.NSObject {
@@ -110,7 +122,9 @@ import _SwiftConcurrencyShims
   @objc public var postalCode: Swift.String?
   @objc public var country: Swift.String?
   @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(line1: Swift.String? = nil, line2: Swift.String? = nil, city: Swift.String? = nil, state: Swift.String? = nil, postalCode: Swift.String? = nil, country: Swift.String? = nil)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(TSPBillingDetails) public class TSPBillingDetails : ObjectiveC.NSObject {
@@ -119,7 +133,9 @@ import _SwiftConcurrencyShims
   @objc public var name: Swift.String?
   @objc public var phone: Swift.String?
   @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(address: Stripe_Swift_Proxy.TSPAddressDetails? = nil, email: Swift.String? = nil, name: Swift.String? = nil, phone: Swift.String? = nil)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(TSPSAppearance) public class TSPSAppearance : ObjectiveC.NSObject {
@@ -195,7 +211,9 @@ import _SwiftConcurrencyShims
   case UPI
   case netBanking
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -210,7 +228,9 @@ import _SwiftConcurrencyShims
   case dinersClub
   case unionPay
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -261,10 +281,16 @@ extension Foundation.NSNumber {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(TSPSPaymentSheetFlowController) public class TSPSPaymentSheetFlowController : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func create(paymentIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetFlowController?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func create(setupIntentClientSecret: Swift.String, configuration: Stripe_Swift_Proxy.TSPSConfiguration, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetFlowController?, (any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc public func presentPaymentOptions(from presentingViewController: UIKit.UIViewController, completion: @escaping () -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func confirm(from presentingViewController: UIKit.UIViewController, completion: @escaping (Stripe_Swift_Proxy.TSPSPaymentSheetResult, (any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -278,7 +304,9 @@ extension Foundation.NSNumber {
   @objc @_Concurrency.MainActor @preconcurrency public var onPaymentOptionChanged: ((Stripe_Swift_Proxy.TSPSPaymentOption?) -> Swift.Void)?
   @objc @_Concurrency.MainActor @preconcurrency public var onPaymentCompletion: ((Stripe_Swift_Proxy.TSPSPaymentSheetResult, (any Swift.Error)?) -> Swift.Void)?
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public func configure(with flowController: Stripe_Swift_Proxy.TSPSPaymentSheetFlowController)
   @objc deinit
 }
