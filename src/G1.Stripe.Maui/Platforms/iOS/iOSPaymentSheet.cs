@@ -13,14 +13,16 @@ public class iOSPaymentSheet : IPaymentSheet
 
     public async Task<PaymentSheetResult> Open(PaymentSheetOptions options, CancellationToken ct = default)
     {
-        var configuration = options.BuildPlatform();
-
-        var ps = new TSPSPaymentSheet(options.ClientSecret, configuration);
-
         var tcs = new TaskCompletionSource<PaymentSheetResult>();
         using (ct.Register(() => tcs.TrySetCanceled(ct)))
         {
-            await MainThread.InvokeOnMainThreadAsync(() => ps.PresentFrom(Platform.GetCurrentUIViewController()!, (res, error) => OnPaymentSheetResult(res, error, tcs))).ConfigureAwait(false);
+            await MainThread.InvokeOnMainThreadAsync(() =>
+            {
+                // BuildPlatform reads UIScreen.MainScreen, which requires the UI thread.
+                var configuration = options.BuildPlatform();
+                var ps = new TSPSPaymentSheet(options.ClientSecret, configuration);
+                ps.PresentFrom(Platform.GetCurrentUIViewController()!, (res, error) => OnPaymentSheetResult(res, error, tcs));
+            }).ConfigureAwait(false);
             return await tcs.Task.ConfigureAwait(false);
         }
     }
