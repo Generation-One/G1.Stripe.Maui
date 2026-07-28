@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--
+		Stripe's payments-ui-core AAR (23.13.1+) references this color from stripe_ic_rounded_close.xml,
+		but only defines it in the paymentsheet/payments-core AARs, which are "Bound" libraries here and
+		aren't included in the aapt2 link pass for the "Bind=False" AARs. Declared locally with the same
+		value Stripe uses upstream so resource linking for this binding project succeeds.
+	-->
+	<color name="stripe_paymentsheet_toolbar_items_color">#000000</color>
+</resources>
