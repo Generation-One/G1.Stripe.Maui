@@ -63,6 +63,16 @@
 			<IsCxx>False</IsCxx>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
+		<NativeReference Include="stripe/StripeFinancialConnectionsLite.xcframework">
+			<Kind>Framework</Kind>
+			<Frameworks></Frameworks>
+			<LinkerFlags></LinkerFlags>
+			<WeakFrameworks></WeakFrameworks>
+			<ForceLoad>False</ForceLoad>
+			<NeedsGccExceptionHandling>False</NeedsGccExceptionHandling>
+			<IsCxx>False</IsCxx>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
 		<NativeReference Include="stripe/StripePayments.xcframework">
 			<Kind>Framework</Kind>
 			<Frameworks></Frameworks>
