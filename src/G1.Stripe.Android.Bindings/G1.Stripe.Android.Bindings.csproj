@@ -51,7 +51,6 @@
 		<AndroidMavenLibrary Include="com.google.dagger:dagger"                                  Version="2.58"   Bind="False" />
 		<AndroidMavenLibrary Include="jakarta.inject:jakarta.inject-api"                         Version="2.0.1"  Bind="False" />
 		<AndroidMavenLibrary Include="javax.inject:javax.inject"                                 Version="1"      Bind="False" />
-		<AndroidMavenLibrary Include="org.jspecify:jspecify"                                     Version="1.0.0"  Bind="False" />
 		<AndroidMavenLibrary Include="dev.drewhamilton.poko:poko-annotations"                    Version="0.21.1" Bind="False" />
 
 		<!-- Misc -->
@@ -70,6 +69,7 @@
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Android"             Version="1.11.0.1" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Play.Services"       Version="1.11.0.2" />
 		<PackageReference Include="Xamarin.KotlinX.Serialization.Json"             Version="1.11.0.1" />
+		<PackageReference Include="Xamarin.JSpecify"                          Version="1.0.1" />
 	</ItemGroup>
 
 	<!-- ============================================================ -->
