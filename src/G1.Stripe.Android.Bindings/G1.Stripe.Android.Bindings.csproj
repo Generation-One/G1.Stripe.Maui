@@ -51,7 +51,6 @@
 		<AndroidMavenLibrary Include="com.google.dagger:dagger"                                  Version="2.58"   Bind="False" />
 		<AndroidMavenLibrary Include="jakarta.inject:jakarta.inject-api"                         Version="2.0.1"  Bind="False" />
 		<AndroidMavenLibrary Include="javax.inject:javax.inject"                                 Version="1"      Bind="False" />
-		<AndroidMavenLibrary Include="org.jspecify:jspecify"                                     Version="1.0.0"  Bind="False" />
 		<AndroidMavenLibrary Include="dev.drewhamilton.poko:poko-annotations"                    Version="0.21.1" Bind="False" />
 
 		<!-- Misc -->
@@ -68,24 +67,25 @@
 		<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8"                     Version="2.4.0.1" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Core"                Version="1.11.0.1" />
 		<PackageReference Include="Xamarin.KotlinX.Coroutines.Android"             Version="1.11.0.1" />
-		<PackageReference Include="Xamarin.KotlinX.Coroutines.Play.Services"       Version="1.11.0.1" />
+		<PackageReference Include="Xamarin.KotlinX.Coroutines.Play.Services"       Version="1.11.0.2" />
 		<PackageReference Include="Xamarin.KotlinX.Serialization.Json"             Version="1.11.0.1" />
+		<PackageReference Include="Xamarin.JSpecify"                          Version="1.0.1" />
 	</ItemGroup>
 
 	<!-- ============================================================ -->
 	<!-- NuGet: AndroidX core / appcompat / misc                      -->
 	<!-- ============================================================ -->
 	<ItemGroup>
-		<PackageReference Include="Xamarin.AndroidX.Annotation"                    Version="1.10.0.1" />
-		<PackageReference Include="Xamarin.AndroidX.AppCompat"                     Version="1.7.1.3" />
-		<PackageReference Include="Xamarin.AndroidX.Browser"                       Version="1.9.0.2" />
-		<PackageReference Include="Xamarin.AndroidX.ConstraintLayout"              Version="2.2.1.5" />
-		<PackageReference Include="Xamarin.AndroidX.Core"                          Version="1.19.0.1" />
-		<PackageReference Include="Xamarin.AndroidX.Core.Core.Ktx"                 Version="1.19.0.1" />
-		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding"       Version="9.2.1.1" />
-		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx"                  Version="1.9.0" />
-		<PackageReference Include="Xamarin.AndroidX.RecyclerView"                  Version="1.4.0.5" />
-		<PackageReference Include="Xamarin.AndroidX.WebKit"                        Version="1.15.0.2" />
+		<PackageReference Include="Xamarin.AndroidX.Annotation"                    Version="1.11.0" />
+		<PackageReference Include="Xamarin.AndroidX.AppCompat"                     Version="1.8.0" />
+		<PackageReference Include="Xamarin.AndroidX.Browser"                       Version="1.10.0.1" />
+		<PackageReference Include="Xamarin.AndroidX.ConstraintLayout"              Version="2.2.2" />
+		<PackageReference Include="Xamarin.AndroidX.Core"                          Version="1.19.1" />
+		<PackageReference Include="Xamarin.AndroidX.Core.Core.Ktx"                 Version="1.19.1" />
+		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding"       Version="9.4.1" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx"                  Version="1.9.1" />
+		<PackageReference Include="Xamarin.AndroidX.RecyclerView"                  Version="1.4.0.6" />
+		<PackageReference Include="Xamarin.AndroidX.WebKit"                        Version="1.17.1" />
 	</ItemGroup>
 
 	<!-- ============================================================ -->
@@ -115,14 +115,14 @@
 	<!-- NuGet: AndroidX Compose                                      -->
 	<!-- ============================================================ -->
 	<ItemGroup>
-		<PackageReference Include="Xamarin.AndroidX.Compose.Foundation"				Version="1.11.3.1" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.Material"				Version="1.11.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Foundation"				Version="1.12.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Material"				Version="1.12.1" />
 		<PackageReference Include="Xamarin.AndroidX.Compose.Material3"				Version="1.4.0.3" />
 		<PackageReference Include="Xamarin.AndroidX.Compose.Material.Icons.Core"	Version="1.7.8.7" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.Runtime"				Version="1.11.3.1" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI"						Version="1.11.3.1" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI.Tooling.Preview"		Version="1.11.3.1" />
-		<PackageReference Include="Xamarin.AndroidX.Compose.UI.ViewBinding"			Version="1.11.3.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.Runtime"				Version="1.12.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI"						Version="1.12.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI.Tooling.Preview"		Version="1.12.1" />
+		<PackageReference Include="Xamarin.AndroidX.Compose.UI.ViewBinding"			Version="1.12.1" />
 	</ItemGroup>
 
 
@@ -130,11 +130,11 @@
 	<!-- NuGet: Google / Material / Play / Accompanist                -->
 	<!-- ============================================================ -->
 	<ItemGroup>
-		<PackageReference Include="Xamarin.Google.Android.Material"                Version="1.13.0.2" />
-		<PackageReference Include="Xamarin.Google.Android.Play.Integrity"          Version="1.4.0.5" />
+		<PackageReference Include="Xamarin.Google.Android.Material"                Version="1.14.0.6" />
+		<PackageReference Include="Xamarin.Google.Android.Play.Integrity"          Version="1.6.0.4" />
 		<PackageReference Include="Xamarin.GooglePlayServices.Wallet"              Version="120.0.0.2" />
-		<PackageReference Include="Xamarin.Google.Accompanist.FlowLayout"          Version="0.36.0" />
-		<PackageReference Include="Xamarin.Google.Accompanist.SystemUIController"  Version="0.36.0" />
+		<PackageReference Include="Xamarin.Google.Accompanist.FlowLayout"          Version="0.36.0.9" />
+		<PackageReference Include="Xamarin.Google.Accompanist.SystemUIController"  Version="0.36.0.9" />
 	</ItemGroup>
 
 	<!-- ============================================================ -->
