@@ -8,7 +8,10 @@ jobs:
   publish-packages:
 
     runs-on: macos-latest
-
+    permissions:
+      id-token: write
+      contents: read
+      
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -27,8 +30,14 @@ jobs:
         NugetVersion: ${{ github.event.release.tag_name }}
       run: ./build-packages.ps1
 
+    - name: NuGet login (OIDC → temp API key)
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{ secrets.NUGET_USER || 'GenerationOne' }}
+
     - name: publish packages
       shell: pwsh
       env:
-        NugetApiKey: ${{ secrets.G1_NUGET_API_KEY }}
+        NugetApiKey: ${{ steps.login.outputs.NUGET_API_KEY }}
       run: ./publish-nuget.ps1
